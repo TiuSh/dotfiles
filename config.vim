@@ -39,9 +39,8 @@ Plug 'terryma/vim-multiple-cursors'
 " Plug 'ZSaberLv0/ZFVimIndentMove' TODO: Test
 Plug 'mhinz/vim-startify'
 " Plug 'airblade/vim-rooter'
-" Plug 'wakatime/vim-wakatime'
 Plug 'tpope/vim-unimpaired'
-" Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-dispatch'
 
 " VCS (Git/SVN/...)
 Plug 'tpope/vim-fugitive'
@@ -801,15 +800,39 @@ nnoremap <Space> :BLines<cr>
 nnoremap <C-f> :Ag<Space>
 nmap  <C-m> <plug>(fzf-maps-n)
 
+" Gcheckout command
 function! s:gcheckout_sink(line)
-  execute 'Git checkout' a:line
+  let remote = matchstr(a:line, '^\s*remotes\/')
+
+  if !empty(remote)
+    let branch = matchstr(a:line, '[^\/]*$')
+
+    execute 'Dispatch git checkout -b ' . branch . ' ' . a:line
+  else
+    execute 'Dispatch git checkout' . a:line
+  endif
 endfunction
 
 command! -bang -nargs=* Gcheckout
       \ call fzf#run(fzf#wrap('Gcheckout', {
-      \     'source': 'git branch',
+      \     'source': 'git branch -a',
       \     'sink': function('s:gcheckout_sink'),
       \     'options': ['--ansi', '--prompt', 'Select Branch> ',
+      \                 '--color', 'hl:68,hl+:110']
+      \ }), <bang>0)
+
+" Gstash command
+function! s:gstash_sink(line)
+  let stash = matchstr(a:line, '^\s*stash{\d*}')
+
+  execute 'Git stash apply ' . stash
+endfunction
+
+command! -bang -nargs=* Gstash
+      \ call fzf#run(fzf#wrap('Gstash', {
+      \     'source': 'git stash list',
+      \     'sink': function('s:gstash_sink'),
+      \     'options': ['--ansi', '--prompt', 'Select Stash> ',
       \                 '--color', 'hl:68,hl+:110']
       \ }), <bang>0)
 
@@ -904,13 +927,13 @@ let g:startify_change_to_vcs_root = 1
 let g:startify_fortune_use_unicode = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Fugitive
+" => Git
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Custom mappings
 nnoremap <leader>ga :Git add %:p<CR><CR>
 " nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gs :Magit<CR>
-nnoremap <leader>gc :Gcommit -v -q<CR>
+nnoremap <leader>gs :exec magit#show_magit('c')<CR>
 nnoremap <leader>gcs :Commits<CR>
 nnoremap <leader>gt :Gcommit -v -q %:p<CR>
 nnoremap <leader>gd :Gdiff<CR>
@@ -927,8 +950,12 @@ nnoremap <leader>gob :Git checkout -b<Space>
 nnoremap <leader>gps :Gpush<CR>
 nnoremap <leader>gpsf :Gpush -f<CR>
 nnoremap <leader>gpl :Gpull origin $(git rev-parse --abbrev-ref HEAD)<CR>
+nnoremap <leader>gplr :Gpull --rebase origin<Space>
 nnoremap <leader>grb :Git rebase origin<Space>
 nnoremap <leader>gf :Gfetch<CR>
+nnoremap <leader>gt :Git stash<CR>
+nnoremap <leader>gtp :Git stash pop<CR>
+nnoremap <leader>gts :Gstash<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => GV
