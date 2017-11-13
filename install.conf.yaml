@@ -30,7 +30,6 @@
   - python3
   - ruby
   - the_silver_searcher
-  - universal-ctags/universal-ctags/universal-ctags
   - zsh
   - zsh-syntax-highlighting
 
@@ -38,6 +37,7 @@
   - brew tap caskroom/cask
   - brew tap caskroom/fonts
   - ['brew cask install 1password docker dropbox emacs firefox font-hack-nerd-font google-chrome iterm2 qobuz-desktop slack', Install Homebrew Casks]
+  - ['brew install --HEAD universal-ctags/universal-ctags/universal-ctags', Installing ctags]
   - ['sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"', Installing OhMyZsh]
   - ['$(brew --prefix)/opt/fzf/install --all', Installing fzf]
   - ['[ -d ~/.emacs.d ] || git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d', Installing Spacemacs]

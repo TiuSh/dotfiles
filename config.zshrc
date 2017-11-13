@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/tiush/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 # Directories to be prepended to $PATH
 declare -a dirs_to_prepend
