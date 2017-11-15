@@ -800,8 +800,8 @@ nnoremap <Space> :BLines<cr>
 nnoremap <C-f> :Ag<Space>
 nmap  <C-m> <plug>(fzf-maps-n)
 
-" Gcheckout command
-function! s:gcheckout_sink(line)
+" FzfCheckout command
+function! s:fzf_checkout_sink(line)
   let remote = matchstr(a:line, '^\s*remotes\/')
 
   if !empty(remote)
@@ -813,25 +813,25 @@ function! s:gcheckout_sink(line)
   endif
 endfunction
 
-command! -bang -nargs=* Gcheckout
-      \ call fzf#run(fzf#wrap('Gcheckout', {
+command! -bang -nargs=* FzfCheckout
+      \ call fzf#run(fzf#wrap('FzfCheckout', {
       \     'source': 'git branch -a',
-      \     'sink': function('s:gcheckout_sink'),
+      \     'sink': function('s:fzf_checkout_sink'),
       \     'options': ['--ansi', '--prompt', 'Select Branch> ',
       \                 '--color', 'hl:68,hl+:110']
       \ }), <bang>0)
 
-" Gstash command
-function! s:gstash_sink(line)
+" FzfStash command
+function! s:fzf_stash_sink(line)
   let stash = matchstr(a:line, '^\s*stash{\d*}')
 
   execute 'Git stash apply ' . stash
 endfunction
 
-command! -bang -nargs=* Gstash
-      \ call fzf#run(fzf#wrap('Gstash', {
+command! -bang -nargs=* FzfStash
+      \ call fzf#run(fzf#wrap('FzfStash', {
       \     'source': 'git stash list',
-      \     'sink': function('s:gstash_sink'),
+      \     'sink': function('s:fzf_stash_sink'),
       \     'options': ['--ansi', '--prompt', 'Select Stash> ',
       \                 '--color', 'hl:68,hl+:110']
       \ }), <bang>0)
@@ -931,6 +931,7 @@ let g:startify_fortune_use_unicode = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Custom mappings
 nnoremap <leader>ga :Git add %:p<CR><CR>
+nnoremap <leader>gaa :Git add -A<CR>
 " nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gs :Magit<CR>
 nnoremap <leader>gs :exec magit#show_magit('c')<CR>
@@ -945,7 +946,7 @@ nnoremap <leader>gp :Ggrep<Space>
 nnoremap <leader>gm :Gmove<Space>
 nnoremap <leader>gb :Git branch<Space>
 " nnoremap <leader>go :Git checkout<Space>
-nnoremap <leader>go :Gcheckout<CR>
+nnoremap <leader>go :FzfCheckout<CR>
 nnoremap <leader>gob :Git checkout -b<Space>
 nnoremap <leader>gps :Gpush<CR>
 nnoremap <leader>gpsf :Gpush -f<CR>
@@ -955,7 +956,7 @@ nnoremap <leader>grb :Git rebase origin<Space>
 nnoremap <leader>gf :Gfetch<CR>
 nnoremap <leader>gt :Git stash<CR>
 nnoremap <leader>gtp :Git stash pop<CR>
-nnoremap <leader>gts :Gstash<CR>
+nnoremap <leader>gts :FzfStash<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => GV
