@@ -17,4 +17,3 @@ export EDITOR=nvim
 
 # Default blocksize
 export BLOCKSIZE=1k
-

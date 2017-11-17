@@ -76,7 +76,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(osx git node npm yarn rails bundler)
+plugins=(osx git tmux node npm yarn rails bundler)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -118,6 +118,14 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Default shell
 export SHELL=/bin/zsh
+
+# Enable true color & italic support
+export TERM="xterm-256color-italic"
+
+# Aliases
+if [ -f ~/.zsh_aliases ]; then
+. ~/.zsh_aliases
+fi
 
 # Enable local config file
 if [ -f ~/.zshrc.local ]; then

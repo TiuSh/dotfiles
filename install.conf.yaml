@@ -8,12 +8,14 @@
 - clean: ['~', '~/.config/nvim']
 
 - link:
+    ~/.zsh_aliases: config.zsh_aliases
     ~/.bash_profile: config.bash_profile
     ~/.bashrc: config.bashrc
     ~/.ctags: config.ctags
     ~/.gitconfig: config.gitconfig
     ~/.gitignore: config.gitignore
     ~/.spacemacs: config.spacemacs
+    ~/.tmux.conf: config.tmux.conf
     ~/.config/nvim/init.vim: config.vim
     ~/.zshrc: config.zshrc
     ~/.bin/ssh-key: bin/ssh-key
@@ -21,6 +23,7 @@
 - brew:
   - archey
   - cmake
+  - coreutils
   - fzf
   - git
   - git-extras
@@ -29,16 +32,18 @@
   - python
   - python3
   - the_silver_searcher
+  - tmux
   - zsh
   - zsh-syntax-highlighting
 
 - shell:
   - brew tap caskroom/cask
   - brew tap caskroom/fonts
-  - ['brew cask install 1password docker dropbox emacs firefox font-hack-nerd-font google-chrome iterm2 qobuz-desktop slack', Install Homebrew Casks]
+  # - ['brew cask install 1password docker dropbox emacs firefox font-hack-nerd-font google-chrome iterm2 qobuz-desktop slack', Install Homebrew Casks]
   - ['brew install --HEAD universal-ctags/universal-ctags/universal-ctags', Installing ctags]
   - ['sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"', Installing OhMyZsh]
   - ['$(brew --prefix)/opt/fzf/install --all', Installing fzf]
   - ['[ -d ~/.emacs.d ] || git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d', Installing Spacemacs]
   - ['[ -f ~/.local/share/nvim/site/autoload/plug.vim ] || curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim', Installing vim-plug]
   - ['open solarized/Solarized\ Dark.itermcolors', Installing iTerm2 color theme]
+  - ['tic themes/xterm-256color-italic.terminfo', Enabling true color in terminal]

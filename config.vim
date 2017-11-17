@@ -22,7 +22,6 @@ Plug 'junegunn/fzf.vim'
 " Plug 'haya14busa/vim-asterisk' TODO: Test
 Plug 'bkad/CamelCaseMotion'
 Plug 'tpope/vim-repeat'
-Plug 'frankier/neovim-colors-solarized-truecolor-only'
 " Plug 'arecarn/crunch.vim'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'easymotion/vim-easymotion'
@@ -41,6 +40,11 @@ Plug 'mhinz/vim-startify'
 " Plug 'airblade/vim-rooter'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-dispatch'
+
+" Themes
+" Plug 'frankier/neovim-colors-solarized-truecolor-only'
+Plug 'lifepillar/vim-solarized8'
+Plug 'rakr/vim-one'
 
 " VCS (Git/SVN/...)
 Plug 'tpope/vim-fugitive'
@@ -302,17 +306,16 @@ set splitbelow
 " Enable syntax highlighting
 syntax enable
 
-" Solarized scheme options
-let g:solarized_menu = 0
-let g:solarized_contrast = "high"
-
-" Uncomment if you don't use the Solarized palette in the terminal
-" let g:solarized_termcolors = 256
+" One theme options
+" let g:one_allow_italics=1
 
 " Color Scheme
-set termguicolors
 set background=dark
-colorscheme solarized
+colorscheme solarized8_high
+
+" Enable true color support
+set termguicolors
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 " Maximum line length
 set colorcolumn=80
@@ -321,7 +324,6 @@ set colorcolumn=80
 if has("gui_running")
     set guioptions-=T
     set guioptions+=e
-    set t_Co=256
     set guitablabel=%M\ %t
 endif
 
