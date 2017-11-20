@@ -801,7 +801,7 @@ map <C-t> :CtrlPBufTag<cr>
 " nnoremap <silent> <C-f> :BLines<cr>
 nnoremap <Space> :BLines<cr>
 nnoremap <C-f> :Ag<Space>
-nmap  <C-m> <plug>(fzf-maps-n)
+" nmap  <C-m> <plug>(fzf-maps-n)
 
 " FzfCheckout command
 function! s:fzf_checkout_sink(line)
