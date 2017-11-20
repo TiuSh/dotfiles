@@ -55,7 +55,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/gv.vim'
 
 " All languages
-Plug 'neomake/neomake'
+" Plug 'neomake/neomake'
+Plug 'w0rp/ale'
 Plug 'scrooloose/nerdcommenter'
 Plug 'jiangmiao/auto-pairs'
 " Plug 'itmammoth/doorboy.vim' TODO: Test
@@ -97,7 +98,7 @@ Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 Plug 'cakebaker/scss-syntax.vim', { 'for': 'css' }
 
 " Javascript
-Plug 'jaawerth/neomake-local-eslint-first'
+" Plug 'jaawerth/neomake-local-eslint-first'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'elzr/vim-json'
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install -g tern && npm install' }
@@ -970,42 +971,57 @@ nnoremap <leader>gl :GV<CR>
 " => Neomake
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enabled makers
-let g:neomake_javascript_enabled_makers = ['eslint']
-let g:neomake_jsx_enabled_makers = ['eslint']
-let g:neomake_typescript_enabled_makers = ['tsc', 'tslint']
-let g:neomake_tsx_enabled_makers = ['tsc', 'tslint']
+" let g:neomake_javascript_enabled_makers = ['eslint']
+" let g:neomake_jsx_enabled_makers = ['eslint']
+" let g:neomake_typescript_enabled_makers = ['tsc', 'tslint']
+" let g:neomake_tsx_enabled_makers = ['tsc', 'tslint']
 
 " Typescript compiler
-function! neomake#makers#ft#typescript#tsc()
-  return {
-    \ 'args': ['--project', getcwd(), '--noEmit'],
-    \ 'append_file': 0,
-    \ 'errorformat':
-    \   '%E%f %#(%l\,%c): error %m,' .
-    \   '%E%f %#(%l\,%c): %m,' .
-    \   '%Eerror %m,' .
-    \   '%C%\s%\+%m'
-    \ }
-endfunction
+" function! neomake#makers#ft#typescript#tsc()
+  " return {
+    " \ 'args': ['--project', getcwd(), '--noEmit'],
+    " \ 'append_file': 0,
+    " \ 'errorformat':
+    " \   '%E%f %#(%l\,%c): error %m,' .
+    " \   '%E%f %#(%l\,%c): %m,' .
+    " \   '%Eerror %m,' .
+    " \   '%C%\s%\+%m'
+    " \ }
+" endfunction
 
-function! neomake#makers#ft#tsx#tsc()
-  return {
-    \ 'args': ['--project', getcwd(), '--noEmit'],
-    \ 'append_file': 0,
-    \ 'errorformat':
-    \   '%E%f %#(%l\,%c): error %m,' .
-    \   '%E%f %#(%l\,%c): %m,' .
-    \   '%Eerror %m,' .
-    \   '%C%\s%\+%m'
-    \ }
-endfunction
+" function! neomake#makers#ft#tsx#tsc()
+  " return {
+    " \ 'args': ['--project', getcwd(), '--noEmit'],
+    " \ 'append_file': 0,
+    " \ 'errorformat':
+    " \   '%E%f %#(%l\,%c): error %m,' .
+    " \   '%E%f %#(%l\,%c): %m,' .
+    " \   '%Eerror %m,' .
+    " \   '%C%\s%\+%m'
+    " \ }
+" endfunction
 
 " Error sign colors
-let g:neomake_error_sign = {'text': '✖', 'texthl': 'DiffDelete'}
+" let g:neomake_error_sign = {'text': '✖', 'texthl': 'DiffDelete'}
 
 " Run Neomake on save
-autocmd! BufWritePost * Neomake
+" autocmd! BufWritePost * Neomake
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => ALE
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Change gutter signs
+let g:ale_sign_error = '✖'
+let g:ale_sign_warning = '⚠'
+
+" Enable airline support
+let g:airline#extensions#ale#enabled = 1
+
+" Linters
+let g:ale_linters = {
+      \   'typescript': ['tslint', 'tsserver'],
+      \ }
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => NERD Commenter
