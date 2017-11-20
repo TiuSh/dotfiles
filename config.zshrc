@@ -122,6 +122,9 @@ export SHELL=/bin/zsh
 # Enable true color & italic support
 export TERM="xterm-256color-italic"
 
+# Set the current user as the default
+export DEFAULT_USER=`whoami`
+
 # Aliases
 if [ -f ~/.zsh_aliases ]; then
 . ~/.zsh_aliases
