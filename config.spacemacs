@@ -360,8 +360,8 @@ you should place your code here."
   ;; Insert new line before/after current
   (define-key evil-normal-state-map (kbd "<s-return>") 'spacemacs/evil-insert-line-below)
   (define-key evil-insert-state-map (kbd "<s-return>") 'spacemacs/evil-insert-line-below)
-  (define-key evil-normal-state-map (kbd "<s-M-return>") 'spacemacs/evil-insert-line-above)
-  (define-key evil-insert-state-map (kbd "<s-M-return>") 'spacemacs/evil-insert-line-above)
+  (define-key evil-normal-state-map (kbd "<C-return>") 'spacemacs/evil-insert-line-above)
+  (define-key evil-insert-state-map (kbd "<C-return>") 'spacemacs/evil-insert-line-above)
 
   ;; Standard indentation with 2 spaces
   (setq-default indent-tabs-mode nil)
