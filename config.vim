@@ -10,6 +10,7 @@ call plug#begin('~/.vim/plugged')
 
 " IDE
 Plug 'scrooloose/nerdtree'
+" Plug 'tpope/vim-vinegar' TODO: Test
 " Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -40,6 +41,8 @@ Plug 'mhinz/vim-startify'
 " Plug 'airblade/vim-rooter'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-dispatch'
+Plug 'dhruvasagar/vim-zoom'
+Plug 'simeji/winresizer'
 
 " Themes
 " Plug 'frankier/neovim-colors-solarized-truecolor-only'
