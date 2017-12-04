@@ -46,6 +46,10 @@ Plug 'tpope/vim-dispatch'
 Plug 'lifepillar/vim-solarized8'
 Plug 'rakr/vim-one'
 
+" TMUX
+Plug 'tmux-plugins/vim-tmux'
+Plug 'tmux-plugins/vim-tmux-focus-events'
+
 " VCS (Git/SVN/...)
 Plug 'tpope/vim-fugitive'
 " Plug 'lambdalisue/gina.vim' TODO: Test
@@ -928,6 +932,10 @@ let g:startify_change_to_vcs_root = 1
 
 " Use Unicode characters
 let g:startify_fortune_use_unicode = 1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => TMUX
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Git
