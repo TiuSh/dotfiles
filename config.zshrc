@@ -125,6 +125,21 @@ export TERM="xterm-256color-italic"
 # Set the current user as the default
 export DEFAULT_USER=`whoami`
 
+# Add a new line before the prompt
+prompt_end() {
+  if [[ -n $CURRENT_BG ]]; then
+    print -n "%{%k%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR"
+  else
+    print -n "%{%k%}"
+  fi
+
+  print -n "%{%f%}"
+  CURRENT_BG=''
+
+  #Adds the new line and ➜ as the start character.
+  printf "\n ➜";
+}
+
 # Aliases
 if [ -f ~/.zsh_aliases ]; then
 . ~/.zsh_aliases
