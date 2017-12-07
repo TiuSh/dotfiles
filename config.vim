@@ -91,7 +91,7 @@ Plug 'TiuSh/vim-toggline'
 Plug 'joonty/vdebug'
 
 " Markdown
-Plug 'gabrielelana/vim-markdown', { 'for': 'markdown' }
+Plug 'gabrielelana/vim-markdown', { 'for': 'markdown', 'do': 'npm install -g livedown' }
 Plug 'shime/vim-livedown', { 'for': 'markdown' }
 
 " HTML
