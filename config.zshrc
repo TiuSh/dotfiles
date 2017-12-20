@@ -12,6 +12,7 @@ dirs_to_prepend=(
   "$HOME/.rvm/bin"
   "$(brew --prefix ruby)/bin"
   "$(brew --prefix)/share/npm/bin" # Add npm-installed package bin
+  "/Applications/Postgres.app/Contents/Versions/latest/bin" # Postgres.app cli tools
 )
 
 # Explicitly configured $PATH
