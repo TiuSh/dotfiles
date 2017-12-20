@@ -1029,9 +1029,16 @@ let g:ale_sign_warning = '⚠'
 " Enable airline support
 let g:airline#extensions#ale#enabled = 1
 
+" Fix files on save
+let g:ale_fix_on_save = 1
+
 " Linters
 let g:ale_linters = {
       \   'typescript': ['tslint', 'tsserver'],
+      \ }
+
+let g:ale_fixers = {
+      \   'typescript': ['tslint', 'prettier'],
       \ }
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
