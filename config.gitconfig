@@ -6,6 +6,7 @@
 
         # Branch
         br = branch
+        brclean = git checkout master && git branch --no-color --merged | grep -v master | xargs git branch -d
         branch-name = rev-parse --abbrev-ref HEAD
         branch-diff = diff master...HEAD
         branch-files = "!git diff master...HEAD --name-status | sed '/^D/d ; s/^.\\s\\+//'"
