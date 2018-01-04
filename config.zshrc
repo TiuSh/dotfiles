@@ -117,6 +117,9 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # FZF Mappings
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Load RVM into a shell session *as a function*
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
 # Default shell
 export SHELL=/bin/zsh
 
