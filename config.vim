@@ -831,6 +831,22 @@ command! -bang -nargs=* FzfCheckout
       \                 '--color', 'hl:68,hl+:110']
       \ }), <bang>0)
 
+
+" FzfPullRebase command
+function! s:fzf_pull_rebase_sink(line)
+  let remote_branch = substitute(substitute(a:line, '\/', ' ', ''), '^\s*', '', '')
+
+  execute 'Dispatch git pull --rebase ' . remote_branch
+endfunction
+
+command! -bang -nargs=* FzfPullRebase
+      \ call fzf#run(fzf#wrap('FzfPullRebase', {
+      \     'source': 'git branch -r',
+      \     'sink': function('s:fzf_pull_rebase_sink'),
+      \     'options': ['--ansi', '--prompt', 'Select Branch> ',
+      \                 '--color', 'hl:68,hl+:110']
+      \ }), <bang>0)
+
 " FzfStash command
 function! s:fzf_stash_sink(line)
   let stash = matchstr(a:line, '^\s*stash{\d*}')
@@ -965,7 +981,7 @@ nnoremap <leader>gob :Git checkout -b<Space>
 nnoremap <leader>gps :Gpush<CR>
 nnoremap <leader>gpsf :Gpush -f<CR>
 nnoremap <leader>gpl :Gpull origin $(git rev-parse --abbrev-ref HEAD)<CR>
-nnoremap <leader>gplr :Gpull --rebase origin<Space>
+nnoremap <leader>gplr :FzfPullRebase<CR>
 nnoremap <leader>grb :Git rebase origin<Space>
 nnoremap <leader>gf :Gfetch<CR>
 nnoremap <leader>gt :Git stash<CR>
