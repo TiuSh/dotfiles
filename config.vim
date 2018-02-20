@@ -120,7 +120,7 @@ Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 " Typescript
 " Plug 'HerringtonDarkholme/yats.vim'
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
-Plug 'mhartington/deoplete-typescript', { 'for': 'typescript' }
+Plug 'mhartington/nvim-typescript', { 'for': 'typescript' }
 Plug 'mhartington/vim-angular2-snippets'
 Plug 'ianks/vim-tsx', { 'for': 'typescript' }
 
@@ -1069,6 +1069,10 @@ nmap ga <Plug>(EasyAlign)
 " Enable on startup
 let g:deoplete#enable_at_startup = 1
 
+" Fixe typescript completion
+" See: https://github.com/mhartington/nvim-typescript/issues/115
+let g:deoplete#num_processes = 1
+
 " Disable completion max width
 let g:deoplete#max_abbr_width = 0
 let g:deoplete#max_menu_width = 0
@@ -1094,11 +1098,6 @@ endfunction"}}}
 autocmd CompleteDone * pclose!
 
 " Debug
-" let g:deoplete#enable_at_startup = 1
-" let g:deoplete#enable_ignore_case = 1
-" let g:deoplete#auto_complete_start_length = 0
-" let g:auto_complete_start_length = 0
-" let g:deoplete#enable_refresh_always = 1
 " let g:deoplete#enable_debug = 1
 " let g:deoplete#enable_profile = 1
 " call deoplete#enable_logging('DEBUG', 'deoplete.log')
