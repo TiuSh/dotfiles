@@ -138,15 +138,20 @@ values."
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(solarized-dark
                          spacemacs-dark)
+   ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
+   ;; `all-the-icons', `custom', `vim-powerline' and `vanilla'. The first three
+   ;; are spaceline themes. `vanilla' is default Emacs mode-line. `custom' is a
+   ;; user defined themes, refer to the DOCUMENTATION.org for more info on how
+   ;; to create your own spaceline theme. Value can be a symbol or a list with
+   dotspacemacs-mode-line-theme '(spacemacs :separator wave :separator-scale 1.5)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro"
-                               :size 13
-                               :weight semi-bold
-                               :width normal
-                               :powerline-scale 1.2)
+   dotspacemacs-default-font '("Hack"
+                               :size 12
+                               :weight bold
+                               :width normal)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The key used for Emacs commands (M-x) (after pressing on the leader key).
@@ -328,11 +333,11 @@ you should place your code here."
       `(powerline-inactive2 ((,class (:background ,base02 :foreground ,base01))))
   ))
 
-  ;; Disable powerline separators
-  (setq powerline-default-separator nil)
-
   ;; Enable indent guide
   ;; (spacemacs/toggle-indent-guide-globally-on)
+
+  ;; Set line spacing
+  (setq-default line-spacing 1)
 
   ;; Use the 'jk' combination to escape from any mode
   (setq-default evil-escape-key-sequence "jk")
