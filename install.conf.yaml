@@ -5,7 +5,7 @@
       force:  true
       backup: true
 
-- clean: ['~', '~/.config/nvim', '~/.tmux/plugins']
+- clean: ['~', '~/.config/nvim', '~/.tmux/plugins', '~/Library/Application Support/Code/User']
 
 - link:
     ~/.zsh_aliases: config.zsh_aliases
@@ -20,6 +20,9 @@
     ~/.zshrc: config.zshrc
     ~/.bin/ssh-key: bin/ssh-key
     ~/.tmux/plugins/tpm: tmux-plugin-manager
+    '~/Library/Application Support/Code/User/settings.json': config.vscode.settings.json
+    '~/Library/Application Support/Code/User/extensions.json': config.vscode.extensions.json
+    '~/Library/Application Support/Code/User/snippets': vscode.snippets
 
 - brew:
   - archey

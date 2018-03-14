@@ -1,0 +1,47 @@
+{
+    // Color theme
+    "workbench.colorTheme": "Solarized Dark",
+
+    // Editor
+    "editor.fontFamily": "Knack Nerd Font",
+    "editor.fontWeight": "normal",
+    "editor.fontSize": 11,
+    "editor.tabSize": 2,
+    "editor.lineNumbers": "relative",
+
+    // Vim
+    "vim.leader": ",",
+    "vim.easymotion": true,
+    "vim.easymotionMarkerFontFamily": "Knack Nerd Font",
+    "vim.easymotionMarkerFontSize": "11",
+    "vim.easymotionMarkerYOffset": 3,
+    "vim.useSystemClipboard": true,
+    "vim.visualstar": true,
+    "vim.hlsearch": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "k"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.otherModesKeyBindingsNonRecursive": [
+        {
+            "before": ["<leader>", "<space>"],
+            "commands": [
+                {
+                    "command": ":nohl",
+                    "args": []
+                }
+            ]
+        },
+        {
+            "before": ["<leader>", "w"],
+            "commands": [
+                {
+                    "command": "workbench.action.files.save",
+                    "args": []
+                }
+            ]
+        }
+    ],
+}
