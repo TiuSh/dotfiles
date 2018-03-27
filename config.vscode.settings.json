@@ -2,6 +2,7 @@
   // Color theme
   "workbench.colorTheme": "Solarized Dark",
   "workbench.iconTheme": null,
+  "workbench.activityBar.visible": false,
 
   // Editor
   "editor.fontFamily": "'Knack Nerd Font'",
@@ -9,6 +10,7 @@
   "editor.fontSize": 11,
   "editor.tabSize": 2,
   "editor.lineNumbers": "relative",
+  "editor.minimap.enabled": false,
 
   // VIM
   "vim.leader": ",",
