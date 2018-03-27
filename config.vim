@@ -10,14 +10,15 @@ call plug#begin('~/.vim/plugged')
 
 " IDE
 Plug 'scrooloose/nerdtree'
-" Plug 'tpope/vim-vinegar' TODO: Test
-" Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
+Plug 'tpope/vim-vinegar'
+Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-ctrlspace/vim-ctrlspace'
+" Plug 'vim-ctrlspace/vim-ctrlspace'
 Plug 'ctrlpvim/ctrlp.vim'
 " Plug 'lokikl/vim-ctrlp-ag' TODO: Test
 " Plug 'fisadev/vim-ctrlp-cmdpalette' TODO: Test
+" Plug 'DavidEGx/ctrlp-smarttabs' TODO: Test
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 " Plug 'haya14busa/vim-asterisk' TODO: Test
@@ -41,8 +42,10 @@ Plug 'mhinz/vim-startify'
 " Plug 'airblade/vim-rooter'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-dispatch'
-Plug 'dhruvasagar/vim-zoom'
-Plug 'simeji/winresizer'
+" Plug 'dhruvasagar/vim-zoom'
+" Plug 'simeji/winresizer'
+Plug 'gcmt/taboo.vim'
+Plug 'Valloric/ListToggle'
 
 " Themes
 " Plug 'frankier/neovim-colors-solarized-truecolor-only'
@@ -108,8 +111,8 @@ Plug 'cakebaker/scss-syntax.vim', { 'for': 'css' }
 " Plug 'jaawerth/neomake-local-eslint-first'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'elzr/vim-json'
-Plug 'ternjs/tern_for_vim', { 'do': 'npm install -g tern && npm install' }
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+" Plug 'ternjs/tern_for_vim', { 'do': 'npm install -g tern && npm install' }
+" Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 Plug 'mxw/vim-jsx', { 'for': 'javascript' }
 Plug 'justinj/vim-react-snippets'
 Plug 'jungomi/vim-mdnquery'
@@ -471,6 +474,7 @@ autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
      \   exe "normal! g`\"" |
      \ endif
+
 " Remember info about open buffers on close
 set viminfo^=%
 
@@ -496,13 +500,6 @@ nmap <M-j> mz:m+<cr>`z
 nmap <M-k> mz:m-2<cr>`z
 vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
-
-if has("mac") || has("macunix")
-  nmap <D-j> <M-j>
-  nmap <D-k> <M-k>
-  vmap <D-j> <M-j>
-  vmap <D-k> <M-k>
-endif
 
 " Location list mapping
 map gll :lopen<cr>
@@ -565,10 +562,7 @@ if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
 
   " Define :AgCmd command
-  " command -nargs=+ -complete=file -bar AgCmd silent! grep! <args>|cwindow|redraw!
-
-  " Open search command
-  " nnoremap <leader>g :AgCmd<SPACE>
+  command -nargs=+ -complete=file -bar AgCmd silent! grep! <args>|cwindow|redraw!
 
   " Find TODOs comments
   noremap <leader>td :AgCmd TODO<cr>
@@ -588,9 +582,6 @@ autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " When you press <leader>r you can search and replace the selected text
 vnoremap <silent> <leader>r :call VisualSelection('replace')<cr>
-
-" grep word under cursor
-" nnoremap <silent> gv :grep! "\b<C-R><C-W>\b"<cr>:cw<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -726,10 +717,10 @@ endfunction
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Sayonara
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" map <silent> <leader>bcc :Sayonara<cr>
+map <silent> <leader>bc :Sayonara!<cr>
 
 " Show confirm before quit
-" let g:sayonara_confirm_quit = 1
+let g:sayonara_confirm_quit = 1
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -737,32 +728,6 @@ endfunction
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline_powerline_fonts = 1
 let g:airline_exclude_preview = 1
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => CtrlSpace
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Default mapping fix with NeoVim
-let g:CtrlSpaceDefaultMappingKey = "<C-space> "
-
-" Disable tab line
-set showtabline=0
-
-" Use Ag when available
-if executable("ag")
-  let g:CtrlSpaceGlobCommand = 'ag -l --nocolor -g ""'
-endif
-
-" Custom colors
-hi link CtrlSpaceNormal   Normal
-hi link CtrlSpaceSelected CursorLine
-hi link CtrlSpaceSearch   Search
-hi link CtrlSpaceStatus   StatusLine
-
-" Custom mappings
-
-" Close current buffer (/!\ Doesn't work with terminal buffer)
-map <silent> <leader>bc <C-space>fF<Esc>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -862,13 +827,6 @@ command! -bang -nargs=* FzfStash
       \                 '--color', 'hl:68,hl+:110']
       \ }), <bang>0)
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Incsearch
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" map /  <Plug>(incsearch-fuzzy-/)
-" map ?  <Plug>(incsearch-fuzzy-?)
-" map g/ <Plug>(incsearch-fuzzy-stay)
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => CamelCaseMotion
@@ -953,6 +911,21 @@ let g:startify_change_to_vcs_root = 1
 let g:startify_fortune_use_unicode = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Taboo
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:taboo_tab_format = '%m %N. %f [%W] '
+let g:taboo_renamed_tab_format = '%m %N. %l [%W] '
+
+nnoremap <leader>tr :TabooRename<Space>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => ListToggle
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Toggle location list & quick fix with Ctrl+L/Q
+let g:lt_location_list_toggle_map = '<c-l>'
+let g:lt_quickfix_list_toggle_map = '<c-q>'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => TMUX
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -995,47 +968,6 @@ nnoremap <leader>gts :FzfStash<CR>
 nnoremap <leader>gl :GV<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Neomake
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Enabled makers
-" let g:neomake_javascript_enabled_makers = ['eslint']
-" let g:neomake_jsx_enabled_makers = ['eslint']
-" let g:neomake_typescript_enabled_makers = ['tsc', 'tslint']
-" let g:neomake_tsx_enabled_makers = ['tsc', 'tslint']
-
-" Typescript compiler
-" function! neomake#makers#ft#typescript#tsc()
-  " return {
-    " \ 'args': ['--project', getcwd(), '--noEmit'],
-    " \ 'append_file': 0,
-    " \ 'errorformat':
-    " \   '%E%f %#(%l\,%c): error %m,' .
-    " \   '%E%f %#(%l\,%c): %m,' .
-    " \   '%Eerror %m,' .
-    " \   '%C%\s%\+%m'
-    " \ }
-" endfunction
-
-" function! neomake#makers#ft#tsx#tsc()
-  " return {
-    " \ 'args': ['--project', getcwd(), '--noEmit'],
-    " \ 'append_file': 0,
-    " \ 'errorformat':
-    " \   '%E%f %#(%l\,%c): error %m,' .
-    " \   '%E%f %#(%l\,%c): %m,' .
-    " \   '%Eerror %m,' .
-    " \   '%C%\s%\+%m'
-    " \ }
-" endfunction
-
-" Error sign colors
-" let g:neomake_error_sign = {'text': '✖', 'texthl': 'DiffDelete'}
-
-" Run Neomake on save
-" autocmd! BufWritePost * Neomake
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => ALE
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Change gutter signs
@@ -1057,13 +989,16 @@ let g:ale_fixers = {
       \   'typescript': ['tslint', 'prettier'],
       \ }
 
+" Move between warnings & errors
+nmap <silent> <C-e>p <Plug>(ale_previous_wrap)
+nmap <silent> <C-e>n <Plug>(ale_next_wrap)
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => NERD Commenter
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 inoremap <leader>cc <C-\><C-O>:call NERDComment('n', 'comment')<cr>
 inoremap <leader>cu <C-\><C-O>:call NERDComment('n', 'uncomment')<cr>
 inoremap <leader>c<space> <C-\><C-O>:call NERDComment('n', 'toggle')<cr>
-" imap <leader>cc <plug>NERDCommenterInsert
 
 " Add / remove 1 space after comment delimiter
 let g:NERDSpaceDelims = 1
@@ -1083,7 +1018,7 @@ nmap ga <Plug>(EasyAlign)
 " => Deoplete
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable on startup
-let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_at_startup = 0
 
 " Fixe typescript completion
 " See: https://github.com/mhartington/nvim-typescript/issues/115
@@ -1182,24 +1117,16 @@ let g:javascript_plugin_flow = 1
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Ternjs
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" map <leader>td :TernDef<cr>
-" map <leader>to :TernDoc<cr>
-" map <leader>tr :TernRefs<cr>
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => deoplete-ternjs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Use deoplete.
-let g:tern_request_timeout = 1
+" let g:tern_request_timeout = 1
 " Disable full signature type on autocomplete
 " let g:tern_show_signature_in_pum = 0
 
 " Use tern_for_vim.
-let g:tern#command = ["tern"]
-let g:tern#arguments = ["--persistent"]
+" let g:tern#command = ["tern"]
+" let g:tern#arguments = ["--persistent"]
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
