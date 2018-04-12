@@ -72,6 +72,7 @@ Plug 'jiangmiao/auto-pairs'
 " Plug 'itmammoth/doorboy.vim' TODO: Test
 Plug 'junegunn/vim-easy-align'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'roxma/nvim-completion-manager'
 " Plug 'Shougo/echodoc.vim' TODO: Test
 " Plug 'Shougo/neoinclude.vim' TODO: Test
 " Plug 'prabirshrestha/asyncomplete.vim' TODO: Test
@@ -501,18 +502,6 @@ nmap <M-k> mz:m-2<cr>`z
 vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
 
-" Location list mapping
-map gll :lopen<cr>
-map glc :lclose<cr>
-map gln :lnext<cr>
-map glp :lprevious<cr>
-
-" Open / Close Quickfix window
-map gcc :copen<cr>
-map gcl :cclose<cr>
-map gcn :cnext<cr>
-map gcp :cprevious<cr>
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Terminal mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -922,8 +911,8 @@ nnoremap <leader>tr :TabooRename<Space>
 " => ListToggle
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Toggle location list & quick fix with Ctrl+L/Q
-let g:lt_location_list_toggle_map = '<c-l>'
-let g:lt_quickfix_list_toggle_map = '<c-q>'
+let g:lt_location_list_toggle_map = 'gl'
+let g:lt_quickfix_list_toggle_map = 'gc'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => TMUX
