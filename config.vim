@@ -1021,7 +1021,7 @@ let g:deoplete#max_menu_width = 0
 let g:deoplete#file#enable_buffer_path = 1
 
 " Disable in comments
-call deoplete#custom#set('_', 'disabled_syntaxes', ['Comment'])
+" call deoplete#custom#set('_', 'disabled_syntaxes', ['Comment'])
 
 " Autocomplete with TAB
 inoremap <silent><expr> <TAB>
