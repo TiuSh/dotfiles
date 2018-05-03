@@ -280,15 +280,15 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>707 340 631 268 0 0 1920 1080 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>650 517 620 392 0 0 1920 1080 </string>
+	<string>650 499 620 392 0 0 1920 1057 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 139 606 469 0 0 1920 1080 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>487 253 796 473 0 0 1920 1080 </string>
+	<string>279 84 796 473 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>177 309 570 377 0 0 1920 1057 </string>
+	<string>416 499 570 377 0 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>960 0 955 1057 0 0 1920 1057 </string>
+	<string>482 523 570 377 0 0 1440 900 </string>
 	<key>NeverWarnAboutShortLivedSessions_1EDD4B58-3DBE-45DA-BA8B-EC7B65D5D89F</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_1EDD4B58-3DBE-45DA-BA8B-EC7B65D5D89F_selection</key>
@@ -1192,61 +1192,68 @@
 			</array>
 			<key>Keyboard Map</key>
 			<dict>
+				<key>0x2c-0x40000</key>
+				<dict>
+					<key>Action</key>
+					<integer>11</integer>
+					<key>Text</key>
+					<string>0x1C</string>
+				</dict>
 				<key>0x63-0x100000</key>
 				<dict>
 					<key>Action</key>
 					<integer>11</integer>
 					<key>Text</key>
-					<string>0x15 0x63</string>
+					<string>0x1C 0x63</string>
 				</dict>
 				<key>0x68-0x100000</key>
 				<dict>
 					<key>Action</key>
 					<integer>11</integer>
 					<key>Text</key>
-					<string>0x15 0x68</string>
+					<string>0x1C 0x68</string>
 				</dict>
 				<key>0x6a-0x100000</key>
 				<dict>
 					<key>Action</key>
 					<integer>11</integer>
 					<key>Text</key>
-					<string>0x15 0x6a</string>
+					<string>0x1C 0x6a</string>
 				</dict>
 				<key>0x6b-0x100000</key>
 				<dict>
 					<key>Action</key>
 					<integer>11</integer>
 					<key>Text</key>
-					<string>0x15 0x6b</string>
+					<string>0x1C 0x6b</string>
 				</dict>
 				<key>0x6c-0x100000</key>
 				<dict>
 					<key>Action</key>
 					<integer>11</integer>
 					<key>Text</key>
-					<string>0x15 0x6c</string>
+					<string>0x1C 0x6c</string>
 				</dict>
 				<key>0x6e-0x100000</key>
 				<dict>
 					<key>Action</key>
 					<integer>11</integer>
 					<key>Text</key>
-					<string>0x15 0x6e</string>
+					<string>0x1C 0x6e</string>
 				</dict>
 				<key>0x70-0x100000</key>
 				<dict>
 					<key>Action</key>
 					<integer>11</integer>
 					<key>Text</key>
-					<string>0x15 0x10</string>
+					<string>0x1C 0x10</string>
 				</dict>
 				<key>0x7a-0x100000</key>
 				<dict>
 					<key>Action</key>
 					<integer>11</integer>
 					<key>Text</key>
-					<string>0x15 0x7a</string>
+					<string>0x1C 0x7a</string>
 				</dict>
 				<key>0xd-0x100000</key>
 				<dict>
@@ -1420,7 +1427,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-03-23T11:31:46Z</date>
+	<date>2018-04-26T14:11:25Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
@@ -1434,6 +1441,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.5</string>
+	<string>3.1.6</string>
 </dict>
 </plist>
