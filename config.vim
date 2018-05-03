@@ -740,7 +740,12 @@ let g:ctrlp_buftag_types = {
   \   'args': '-f - --sort=no --excmd=pattern --fields=nKs --extras= ',
   \ },
 \ }
-
+let g:ctrlp_prompt_mappings = {
+  \ 'PrtSelectMove("j")':   ['<c-n>', '<down>'],
+  \ 'PrtSelectMove("k")':   ['<c-p>', '<up>'],
+  \ 'PrtHistory(-1)':       ['<c-k>'],
+  \ 'PrtHistory(1)':        ['<c-j>'],
+\ }
 if executable('ag')
   " Use ag over grep
   set grepprg=ag\ --nogroup\ --nocolor
