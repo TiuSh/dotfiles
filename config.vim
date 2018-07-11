@@ -124,7 +124,7 @@ Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 " Typescript
 " Plug 'HerringtonDarkholme/yats.vim'
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
-Plug 'mhartington/nvim-typescript', { 'for': 'typescript' }
+Plug 'mhartington/nvim-typescript', { 'for': 'typescript', 'do': './install.sh' },
 Plug 'mhartington/vim-angular2-snippets'
 Plug 'ianks/vim-tsx', { 'for': 'typescript' }
 
