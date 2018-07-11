@@ -5,6 +5,13 @@ alias rp='RAILS_ENV=test bin/rspec'
 alias ru='bundle exec rubocop --auto-correct'
 alias rua='bundle exec rubocop --auto-gen-config'
 
+# Git
+alias gbclean="git checkout master && git branch --merged | grep -v master | xargs git branch -d"
+alias gbpurge="git branch | grep -v "master" | xargs git branch -D"
+alias gcmgs="gcmsg"
+alias ggpush!="ggpush --force"
+alias grbom="gfa && grb origin/master"
+
 # bundle
 alias be="bundle exec"
 alias fs="be foreman start"
