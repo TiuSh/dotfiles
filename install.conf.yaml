@@ -45,7 +45,7 @@
 - shell:
   - brew tap caskroom/cask
   - brew tap caskroom/fonts
-  # - ['brew cask install 1password docker dropbox emacs firefox font-hack-nerd-font google-chrome iterm2 qobuz-desktop slack', Install Homebrew Casks]
+  # - ['brew cask install 1password docker dropbox firefox font-hack-nerd-font google-chrome iterm2 qobuz-desktop slack visual-studio-code', Install Homebrew Casks]
   - ['brew install --HEAD universal-ctags/universal-ctags/universal-ctags', Installing ctags]
   - ['sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"', Installing OhMyZsh]
   - ['$(brew --prefix)/opt/fzf/install --all', Installing fzf]
@@ -54,3 +54,4 @@
   - ['open solarized/Solarized\ Dark.itermcolors', Installing iTerm2 color theme]
   - ['defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.dotfiles/iterm2" && defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true', Installing iTerm2 settings]
   - ['tic themes/xterm-256color-italic.terminfo', Enabling true color in terminal]
+  - ['./config.vscode.extensions.sh', Installing VSCode extensions]

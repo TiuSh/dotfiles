@@ -14,8 +14,9 @@ if [ -f ~/.bash_fzf ]; then
 fi
 
 # PATH
-export PATH="$PATH:/usr/local/bin/"
 export PATH="/usr/local/git/bin:/sw/bin/:/usr/local/bin:/usr/local/:/usr/local/sbin:/usr/local/mysql/bin:$PATH"
+export PATH="$PATH:/usr/local/bin/"
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 # Default editor
 export EDITOR=nvim

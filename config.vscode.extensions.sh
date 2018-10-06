@@ -1,0 +1,15 @@
+code --install-extension akamud.vscode-theme-onedark
+code --install-extension anaganisk.theme-onedark-plus
+code --install-extension donjayamanne.githistory
+code --install-extension eamodio.gitlens
+code --install-extension eg2.tslint
+code --install-extension esbenp.prettier-vscode
+code --install-extension GitHub.vscode-pull-request-github
+code --install-extension mikestead.dotenv
+code --install-extension MS-CEINTL.vscode-language-pack-fr
+code --install-extension ms-vsliveshare.vsliveshare
+code --install-extension msjsdiag.debugger-for-chrome
+code --install-extension PeterJausovec.vscode-docker
+code --install-extension rebornix.ruby
+code --install-extension stpn.vscode-graphql
+code --install-extension vscodevim.vim
