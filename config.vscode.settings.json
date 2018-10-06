@@ -1,13 +1,10 @@
 {
-  // Color theme
-  "workbench.colorTheme": "Solarized Dark",
   "workbench.iconTheme": null,
   "workbench.activityBar.visible": false,
 
   // Editor
   "editor.fontFamily": "'Knack Nerd Font'",
   "editor.fontWeight": "bold",
-  "editor.fontSize": 11,
   "editor.tabSize": 2,
   "editor.lineNumbers": "relative",
   "editor.minimap.enabled": false,
@@ -25,23 +22,110 @@
   "vim.easymotionMarkerYOffset": 3,
   "vim.insertModeKeyBindingsNonRecursive": [
     {
-      "before": ["j","k"],
+      "before": ["j", "k"],
       "after": ["<Esc>"]
     }
   ],
-  "vim.otherModesKeyBindingsNonRecursive": [
+  "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": ["<leader>", "<space>"],
       "commands": [
         {
-          "command": ":nohl",
-          "args": []
+          "command": ":nohl"
         }
       ]
     },
     {
       "before": ["<leader>", "w"],
-      "after": [":", "w"]
+      "commands": ["workbench.action.files.save"]
+    },
+    // Panels
+    {
+      "before": ["<leader>", "n"],
+      "commands": ["workbench.view.explorer"]
+    },
+    // Windows split
+    {
+      "before": ["<leader>", "s"],
+      "commands": ["workbench.action.splitEditorDown"]
+    },
+    {
+      "before": ["<leader>", "v"],
+      "commands": ["workbench.action.splitEditorRight"]
+    },
+    // Windows navigation
+    {
+      "before": ["<C-h>"],
+      "commands": ["workbench.action.focusLeftGroup"]
+    },
+    {
+      "before": ["<C-l>"],
+      "commands": ["workbench.action.focusRightGroup"]
+    },
+    {
+      "before": ["<C-k>"],
+      "commands": ["workbench.action.focusAboveGroup"]
+    },
+    {
+      "before": ["<C-j>"],
+      "commands": ["workbench.action.focusBelowGroup"]
+    },
+    // Windows manipulation
+    {
+      "before": ["<leader>", "b", "c"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
+    {
+      "before": ["<leader>", "b", "a"],
+      "commands": ["workbench.action.closeAllEditors"]
+    },
+    {
+      "before": ["<C-S-l>"],
+      "commands": ["workbench.action.moveEditorToRightGroup"]
+    },
+    {
+      "before": ["<C-S-h>"],
+      "commands": ["workbench.action.moveEditorToLeftGroup"]
+    },
+    {
+      "before": ["<C-S-j>"],
+      "commands": ["workbench.action.moveEditorToBelowGroup"]
+    },
+    {
+      "before": ["<C-S-k>"],
+      "commands": ["workbench.action.moveEditorToBelowGroup"]
+    },
+    // Editors navigation
+    {
+      "before": ["<C-p>"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["<C-b>"],
+      "commands": ["workbench.action.showAllEditors"]
+    },
+    // Text manipulation
+    {
+      "before": ["<leader>", "r"],
+      "commands": ["editor.action.rename"]
     }
-  ]
+  ],
+  "window.zoomLevel": 0,
+  "workbench.colorTheme": "Atom One Dark",
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "github.hosts": [
+    {
+      "host": "https://github.com",
+      "username": "oauth",
+      "token": "system"
+    }
+  ],
+  "workbench.sideBar.location": "left",
+  "diffEditor.renderSideBySide": false,
+  "editor.formatOnSave": true,
+  "workbench.editor.openSideBySideDirection": "down",
+  "gitlens.blame.heatmap.enabled": false,
+  "editor.codeLens": false,
+  "files.trimTrailingWhitespace": true,
+  "editor.renderWhitespace": "boundary"
 }

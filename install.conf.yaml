@@ -21,6 +21,7 @@
     ~/.bin/ssh-key: bin/ssh-key
     ~/.tmux/plugins/tpm: tmux-plugin-manager
     '~/Library/Application Support/Code/User/settings.json': config.vscode.settings.json
+    '~/Library/Application Support/Code/User/keybindings.json': config.vscode.keybindings.json,
     '~/Library/Application Support/Code/User/extensions.json': config.vscode.extensions.json
     '~/Library/Application Support/Code/User/snippets': vscode.snippets
 
