@@ -21,7 +21,7 @@
     ~/.bin/ssh-key: bin/ssh-key
     ~/.tmux/plugins/tpm: tmux-plugin-manager
     '~/Library/Application Support/Code/User/settings.json': config.vscode.settings.json
-    '~/Library/Application Support/Code/User/keybindings.json': config.vscode.keybindings.json,
+    '~/Library/Application Support/Code/User/keybindings.json': config.vscode.keybindings.json
     '~/Library/Application Support/Code/User/extensions.json': config.vscode.extensions.json
     '~/Library/Application Support/Code/User/snippets': vscode.snippets
 
@@ -49,9 +49,7 @@
   - ['brew install --HEAD universal-ctags/universal-ctags/universal-ctags', Installing ctags]
   - ['sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"', Installing OhMyZsh]
   - ['$(brew --prefix)/opt/fzf/install --all', Installing fzf]
-  # - ['[ -d ~/.emacs.d ] || git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d', Installing Spacemacs]
   - ['[ -f ~/.local/share/nvim/site/autoload/plug.vim ] || curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim', Installing vim-plug]
   - ['open solarized/Solarized\ Dark.itermcolors', Installing iTerm2 color theme]
   - ['defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.dotfiles/iterm2" && defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true', Installing iTerm2 settings]
   - ['tic themes/xterm-256color-italic.terminfo', Enabling true color in terminal]
-  - ['./config.vscode.extensions.sh', Installing VSCode extensions]
