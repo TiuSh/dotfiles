@@ -50,7 +50,7 @@ Plug 'Valloric/ListToggle'
 " Themes
 " Plug 'frankier/neovim-colors-solarized-truecolor-only'
 Plug 'lifepillar/vim-solarized8'
-Plug 'rakr/vim-one'
+" Plug 'rakr/vim-one'
 
 " TMUX
 Plug 'tmux-plugins/vim-tmux'
