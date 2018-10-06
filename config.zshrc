@@ -109,7 +109,7 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Archey login screen
-archey -c
+# archey -c
 
 # ZSH syntax highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

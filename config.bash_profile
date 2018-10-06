@@ -8,6 +8,11 @@ if [ -f ~/.bash_aliases ]; then
   . ~/.bash_aliases
 fi
 
+# Zsh Helpers
+if [ -f ~/.bash_fzf ]; then
+. ~/.bash_fzf
+fi
+
 # PATH
 export PATH="$PATH:/usr/local/bin/"
 export PATH="/usr/local/git/bin:/sw/bin/:/usr/local/bin:/usr/local/:/usr/local/sbin:/usr/local/mysql/bin:$PATH"
