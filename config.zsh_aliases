@@ -6,12 +6,11 @@ alias ru='bundle exec rubocop --auto-correct'
 alias rua='bundle exec rubocop --auto-gen-config'
 
 # Git
-alias gbclean="git checkout master && git branch --merged | grep -v master | xargs git branch -d"
-alias gbpurge="git branch | grep -v "master" | xargs git branch -D"
+alias gpurge="gcm && g brpurge"
 alias gcmgs="gcmsg"
-alias ggpush!="ggpush --force"
 alias gp!="gp --force"
 alias grbom="gfa && grb origin/master"
+alias gap="ga -p"
 
 # bundle
 alias be="bundle exec"
