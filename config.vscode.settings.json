@@ -39,6 +39,18 @@
       "before": ["<leader>", "w"],
       "commands": ["workbench.action.files.save"]
     },
+    {
+      "before": ["m"],
+      "after": ["d"]
+    },
+    {
+      "before": ["m", "m"],
+      "after": ["d", "d"]
+    },
+    {
+      "before": ["d"],
+      "after": ["\"", "_", "d"]
+    },
     // Panels
     {
       "before": ["<leader>", "n"],
@@ -110,16 +122,15 @@
       "commands": ["editor.action.rename"]
     }
   ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["m"],
+      "after": ["d"]
+    }
+  ],
   "window.zoomLevel": 0,
   "workbench.colorTheme": "Atom One Dark",
   "workbench.editor.enablePreviewFromQuickOpen": false,
-  "github.hosts": [
-    {
-      "host": "https://github.com",
-      "username": "oauth",
-      "token": "system"
-    }
-  ],
   "workbench.sideBar.location": "left",
   "diffEditor.renderSideBySide": false,
   "editor.formatOnSave": true,
@@ -127,5 +138,13 @@
   "gitlens.blame.heatmap.enabled": false,
   "editor.codeLens": false,
   "files.trimTrailingWhitespace": true,
-  "editor.renderWhitespace": "boundary"
+  "editor.renderWhitespace": "boundary",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "githubPullRequests.hosts": [
+    {
+      "host": "https://github.com",
+      "username": "oauth",
+      "token": "system"
+    }
+  ]
 }

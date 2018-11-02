@@ -1,12 +1,12 @@
 // Place your key bindings in this file to overwrite the defaults
 [
   {
-    "key": "ctrl+f",
+    "key": "d",
     "command": "explorer.newFolder",
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
   {
-    "key": "ctrl+n",
+    "key": "shift+5",
     "command": "explorer.newFile",
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
@@ -21,7 +21,7 @@
     "when": "editorTextFocus && !editorReadonly"
   },
   {
-    "key": "d",
+    "key": "shift+d",
     "command": "deleteFile",
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
