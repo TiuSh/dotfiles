@@ -5,7 +5,7 @@
       force:  true
       backup: true
 
-- clean: ['~', '~/.config/nvim', '~/.tmux/plugins', '~/Library/Application Support/Code/User']
+- clean: ['~', '~/.config/nvim', '~/.config/oni', '~/.tmux/plugins', '~/Library/Application Support/Code/User']
 
 - link:
     ~/.zsh_aliases: config.zsh_aliases
@@ -16,10 +16,12 @@
     ~/.gitignore: config.gitignore
     ~/.spacemacs: config.spacemacs
     ~/.tmux.conf: config.tmux.conf
-    ~/.config/nvim/init.vim: config.vim
     ~/.zshrc: config.zshrc
     ~/.bin/ssh-key: bin/ssh-key
     ~/.tmux/plugins/tpm: tmux-plugin-manager
+    ~/.config/nvim/init.vim: config.vim
+    ~/.config/oni/config.tsx: config.oni.tsx
+    ~/.config/oni/init.vim: config.oni.vim
     '~/Library/Application Support/Code/User/settings.json': config.vscode.settings.json
     '~/Library/Application Support/Code/User/keybindings.json': config.vscode.keybindings.json
     '~/Library/Application Support/Code/User/extensions.json': config.vscode.extensions.json
