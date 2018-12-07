@@ -280,17 +280,17 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>707 340 631 268 0 0 1920 1080 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>230 1129 620 392 0 0 1080 1897 </string>
+	<string>-1270 733 620 392 -1920 216 1920 1080 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 139 606 469 0 0 1920 1080 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>-1433 395 796 486 -1920 216 1920 1080 </string>
+	<string>-1433 347 937 514 -1920 216 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-1816 716 585 377 -1920 216 1920 1057 </string>
+	<string>294 357 585 377 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>681 500 570 377 0 0 1440 877 </string>
+	<string>0 0 1080 1889 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>268 83 570 377 0 0 1920 1080 </string>
+	<string>102 182 585 377 0 0 1080 1920 </string>
 	<key>NeverWarnAboutShortLivedSessions_1EDD4B58-3DBE-45DA-BA8B-EC7B65D5D89F</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_1EDD4B58-3DBE-45DA-BA8B-EC7B65D5D89F_selection</key>
@@ -1320,7 +1320,7 @@
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
-			<integer>1000</integer>
+			<integer>0</integer>
 			<key>Selected Text Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -1429,7 +1429,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-09-27T09:31:45Z</date>
+	<date>2018-11-22T16:53:59Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
@@ -1443,6 +1443,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.2.0</string>
+	<string>3.2.5</string>
 </dict>
 </plist>
