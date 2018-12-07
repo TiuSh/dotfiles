@@ -28,7 +28,7 @@ export const configuration = {
   "sidebar.enabled": false,
 
   // Learning
-  "learning.enabled": true,
+  "learning.enabled": false,
 
   // Tabs
   "tabs.mode": "native",
