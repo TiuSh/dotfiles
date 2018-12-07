@@ -26,6 +26,7 @@ Plug 'bkad/CamelCaseMotion'
 Plug 'tpope/vim-repeat'
 " Plug 'arecarn/crunch.vim'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+Plug 'Shougo/denite.nvim'
 Plug 'easymotion/vim-easymotion'
 Plug 'svermeulen/vim-easyclip'
 " Plug 'vimlab/split-term.vim'
@@ -38,7 +39,7 @@ Plug 'terryma/vim-multiple-cursors'
 " Plug 'ryanoasis/vim-devicons'
 " Plug 'itchyny/calendar.vim' TODO: Test
 " Plug 'ZSaberLv0/ZFVimIndentMove' TODO: Test
-Plug 'mhinz/vim-startify'
+" Plug 'mhinz/vim-startify'
 " Plug 'airblade/vim-rooter'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-dispatch'
@@ -73,7 +74,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-easy-align'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Plug 'roxma/nvim-completion-manager'
-" Plug 'Shougo/echodoc.vim' TODO: Test
+Plug 'Shougo/echodoc.vim'
 " Plug 'Shougo/neoinclude.vim' TODO: Test
 " Plug 'prabirshrestha/asyncomplete.vim' TODO: Test
 Plug 'SirVer/ultisnips'
@@ -95,8 +96,8 @@ Plug 'TiuSh/vim-toggline'
 Plug 'joonty/vdebug'
 
 " Markdown
-Plug 'gabrielelana/vim-markdown', { 'for': 'markdown', 'do': 'npm install -g livedown' }
-Plug 'shime/vim-livedown', { 'for': 'markdown' }
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+" Plug 'shime/vim-livedown', { 'for': 'markdown', 'do': 'npm install -g livedown' }
 
 " HTML
 Plug 'mattn/emmet-vim'
@@ -125,14 +126,14 @@ Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 " Plug 'HerringtonDarkholme/yats.vim'
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'mhartington/nvim-typescript', { 'for': 'typescript', 'do': './install.sh' },
-Plug 'mhartington/vim-angular2-snippets'
+" Plug 'mhartington/vim-angular2-snippets'
 Plug 'ianks/vim-tsx', { 'for': 'typescript' }
 
 " PHP
 " Plug 'phpvim/phpcd.vim', { 'for': 'php' , 'do': 'composer update' }
 
 " Meteor
-Plug 'cmather/vim-meteor-snippets'
+" Plug 'cmather/vim-meteor-snippets'
 
 " GraphQL
 Plug 'jparise/vim-graphql'
@@ -444,8 +445,8 @@ map <leader>tm :tabmove
 " With terminal
 map <leader>tnt :tabnew\|terminal<cr>
 
-map <A-h> gT
-map <A-l> gt
+map <D-h> gT
+map <D-l> gt
 map <C-1> 1gt
 map <C-2> 2gt
 map <C-3> 3gt
@@ -497,10 +498,10 @@ set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ 
 inoremap jk <Esc>
 
 " Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
-nmap <M-j> mz:m+<cr>`z
-nmap <M-k> mz:m-2<cr>`z
-vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
-vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
+nmap <D-j> mz:m+<cr>`z
+nmap <D-k> mz:m-2<cr>`z
+vmap <D-j> :m'>+<cr>`<my`>mzgv`yo`z
+vmap <D-k> :m'<-2<cr>`>my`<mzgv`yo`z
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Terminal mappings
@@ -571,19 +572,6 @@ autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " When you press <leader>r you can search and replace the selected text
 vnoremap <silent> <leader>r :call VisualSelection('replace')<cr>
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Spell checking
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Pressing ,ss will toggle and untoggle spell checking
-map <leader>ss :setlocal spell!<cr>
-
-" Shortcuts using <leader>
-map <leader>sn ]s
-map <leader>sp [s
-map <leader>sa zg
-map <leader>s? z=
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -883,28 +871,6 @@ let g:EasyClipShareYanks = 1
 let g:EasyClipUseSubstituteDefaults = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Startify
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:startify_list_order = [
-      \ ['    Sessions:'],
-      \ 'sessions',
-      \ ['    Most recently used files:'],
-      \ 'files'
-      \ ]
-
-" Only show the last 10th sessions
-let g:startify_session_number = 10
-
-" Automatically persists sessions when leavin Vim
-let g:startify_session_persistence = 1
-
-" Cwd to the root directory of the VCS
-let g:startify_change_to_vcs_root = 1
-
-" Use Unicode characters
-let g:startify_fortune_use_unicode = 1
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Taboo
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:taboo_tab_format = '%m %N. %f [%W] '
@@ -1012,11 +978,7 @@ nmap ga <Plug>(EasyAlign)
 " => Deoplete
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable on startup
-let g:deoplete#enable_at_startup = 0
-
-" Fixe typescript completion
-" See: https://github.com/mhartington/nvim-typescript/issues/115
-let g:deoplete#num_processes = 1
+let g:deoplete#enable_at_startup = 1
 
 " Disable completion max width
 let g:deoplete#max_abbr_width = 0
@@ -1029,18 +991,18 @@ let g:deoplete#file#enable_buffer_path = 1
 " call deoplete#custom#set('_', 'disabled_syntaxes', ['Comment'])
 
 " Autocomplete with TAB
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ deoplete#mappings#manual_complete()
+" inoremap <silent><expr> <TAB>
+      " \ pumvisible() ? "\<C-n>" :
+      " \ <SID>check_back_space() ? "\<TAB>" :
+      " \ deoplete#mappings#manual_complete()
 
-function! s:check_back_space() abort "{{{
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction"}}}
+" function! s:check_back_space() abort "{{{
+  " let col = col('.') - 1
+  " return !col || getline('.')[col - 1]  =~ '\s'
+" endfunction"}}}
 
 " Autoclose preview window
-autocmd CompleteDone * pclose!
+" autocmd CompleteDone * pclose!
 
 " Debug
 " let g:deoplete#enable_debug = 1
@@ -1051,7 +1013,7 @@ autocmd CompleteDone * pclose!
 " let g:deoplete#omni#input_patterns = {}
 " let g:deoplete#omni#input_patterns.php = '\w+|[^. \t]->\w*|\w+::\w*'
 
-let g:deoplete#sources#tss#enable_auto_signature_preview = 1
+" let g:deoplete#sources#tss#enable_auto_signature_preview = 1
 
 " Use local Flow bin when provided
 let g:flow_path = StrTrim(system('PATH=$(npm bin):$PATH && which flow'))
@@ -1084,7 +1046,7 @@ inoremap <silent> <leader>; <C-\><C-O>:call toggline#End(';')<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM Markdown
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:markdown_mapping_switch_status = '<Leader>ss'
+let g:vim_markdown_folding_disabled = 1
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
