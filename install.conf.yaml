@@ -47,7 +47,8 @@
 - shell:
   - brew tap caskroom/cask
   - brew tap caskroom/fonts
-  # - ['brew cask install 1password docker dropbox firefox font-hack-nerd-font google-chrome iterm2 qobuz-desktop slack visual-studio-code', Install Homebrew Casks]
+  # - ['brew cask install 1password docker dropbox firefox google-chrome iterm2 qobuz-desktop slack visual-studio-code', Install Homebrew Casks]
+  - ['brew cask install font-hack-nerd-font font-fira-code', Install fonts]
   - ['brew install --HEAD universal-ctags/universal-ctags/universal-ctags', Installing ctags]
   - ['sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"', Installing OhMyZsh]
   - ['$(brew --prefix)/opt/fzf/install --all', Installing fzf]
