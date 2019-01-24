@@ -117,7 +117,7 @@ Plug 'elzr/vim-json'
 " Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 Plug 'mxw/vim-jsx', { 'for': 'javascript' }
 Plug 'justinj/vim-react-snippets'
-Plug 'jungomi/vim-mdnquery'
+" Plug 'jungomi/vim-mdnquery'
 
 " CoffeeScript
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
@@ -742,7 +742,7 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor --nogroup --hidden --ignore ".git/" -g ""'
 
   " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
+  let g:ctrlp_use_caching = 1
 endif
 
 map <C-b> :CtrlPBuffer<cr>
@@ -895,31 +895,21 @@ let g:lt_quickfix_list_toggle_map = 'gc'
 " Custom mappings
 nnoremap <leader>ga :Git add %:p<CR><CR>
 nnoremap <leader>gaa :Git add -A<CR>
-" nnoremap <leader>gs :Gstatus<CR>
-nnoremap <leader>gs :Magit<CR>
-nnoremap <leader>gs :exec magit#show_magit('c')<CR>
+nnoremap <leader>gst :exec magit#show_magit('c')<CR>
 nnoremap <leader>gcs :Commits<CR>
 nnoremap <leader>gt :Gcommit -v -q %:p<CR>
 nnoremap <leader>gd :Gdiff<CR>
-nnoremap <leader>ge :Gedit<CR>
-nnoremap <leader>gr :Gread<CR>
-nnoremap <leader>gw :Gwrite<CR><CR>
-" nnoremap <leader>gl :silent! Glog<CR>:bot copen<CR>
-nnoremap <leader>gp :Ggrep<Space>
-nnoremap <leader>gm :Gmove<Space>
-nnoremap <leader>gb :Git branch<Space>
-" nnoremap <leader>go :Git checkout<Space>
-nnoremap <leader>go :FzfCheckout<CR>
-nnoremap <leader>gob :Git checkout -b<Space>
-nnoremap <leader>gps :Gpush<CR>
+nnoremap <leader>gco :FzfCheckout<CR>
+nnoremap <leader>gcb :Git checkout -b<Space>
+nnoremap <leader>gp :Gpush<CR>
 nnoremap <leader>gpsf :Gpush -f<CR>
-nnoremap <leader>gpl :Gpull origin $(git rev-parse --abbrev-ref HEAD)<CR>
-nnoremap <leader>gplr :FzfPullRebase<CR>
-nnoremap <leader>grb :Git rebase origin<Space>
-nnoremap <leader>gf :Gfetch<CR>
-nnoremap <leader>gt :Git stash<CR>
-nnoremap <leader>gtp :Git stash pop<CR>
-nnoremap <leader>gts :FzfStash<CR>
+nnoremap <leader>gl :Gpull origin $(git rev-parse --abbrev-ref HEAD)<CR>
+nnoremap <leader>gup :FzfPullRebase<CR>
+nnoremap <leader>gfa :Gfetch<CR>
+nnoremap <leader>gsta :Git stash<CR>
+nnoremap <leader>gstp :Git stash pop<CR>
+nnoremap <leader>gstl :FzfStash<CR>
+nnoremap <leader>glog :GV<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => GV
@@ -938,7 +928,7 @@ let g:ale_sign_warning = '⚠'
 let g:airline#extensions#ale#enabled = 1
 
 " Fix files on save
-let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 0
 
 " Linters
 let g:ale_linters = {
@@ -953,7 +943,10 @@ let g:ale_fixers = {
 nmap <silent> <C-e>p <Plug>(ale_previous_wrap)
 nmap <silent> <C-e>n <Plug>(ale_next_wrap)
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Fix buffer with <C-e>e
+nmap <silent> <C-e>e :ALEFix<cr>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => NERD Commenter
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 inoremap <leader>cc <C-\><C-O>:call NERDComment('n', 'comment')<cr>
@@ -1094,8 +1087,8 @@ let g:jsx_ext_required = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Mdn Query
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd FileType typescript setlocal keywordprg=:MdnQueryFirstMatch
-autocmd FileType typescript.tsx setlocal keywordprg=:MdnQueryFirstMatch
+" autocmd FileType typescript setlocal keywordprg=:MdnQueryFirstMatch
+" autocmd FileType typescript.tsx setlocal keywordprg=:MdnQueryFirstMatch
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
