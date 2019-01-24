@@ -17,7 +17,7 @@ Plug 'svermeulen/vim-easyclip'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-dispatch'
-Plug 'gcmt/taboo.vim'
+" Plug 'gcmt/taboo.vim'
 Plug 'Valloric/ListToggle'
 " Plug 'lifepillar/vim-solarized8'
 Plug 'eugen0329/vim-esearch'
@@ -453,11 +453,11 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor --nogroup --hidden --ignore ".git/" -g ""'
 
   " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
+  let g:ctrlp_use_caching = 1
 endif
 
 map <C-b> :CtrlPBuffer<cr>
-map <C-t> :CtrlPBufTag<cr>
+" map <C-t> :CtrlPBufTag<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => FZF
@@ -579,10 +579,10 @@ let g:EasyClipUseSubstituteDefaults = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Taboo
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:taboo_tab_format = '%m %N. %f [%W] '
-let g:taboo_renamed_tab_format = '%m %N. %l [%W] '
+" let g:taboo_tab_format = '%m %N. %f [%W] '
+" let g:taboo_renamed_tab_format = '%m %N. %l [%W] '
 
-nnoremap <leader>tr :TabooRename<Space>
+" nnoremap <leader>tr :TabooRename<Space>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => ListToggle
@@ -595,16 +595,6 @@ let g:lt_quickfix_list_toggle_map = 'gc'
 " => Git
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Custom mappings
-" nnoremap <leader>gs :Gstatus<CR>
-" nnoremap <leader>ge :Gedit<CR>
-" nnoremap <leader>gr :Gread<CR>
-" nnoremap <leader>gw :Gwrite<CR><CR>
-" nnoremap <leader>gl :silent! Glog<CR>:bot copen<CR>
-" nnoremap <leader>gp :Ggrep<Space>
-" nnoremap <leader>gm :Gmove<Space>
-" nnoremap <leader>gb :Git branch<Space>
-" nnoremap <leader>go :Git checkout<Space>
-" nnoremap <leader>grb :Git rebase origin<Space>
 nnoremap <leader>ga :Git add %:p<CR><CR>
 nnoremap <leader>gaa :Git add -A<CR>
 nnoremap <leader>gst :exec magit#show_magit('c')<CR>
@@ -631,18 +621,18 @@ let g:ale_sign_error = '✖'
 let g:ale_sign_warning = '⚠'
 
 " Enable airline support
-let g:airline#extensions#ale#enabled = 1
+" let g:airline#extensions#ale#enabled = 1
 
 " Fix files on save
-let g:ale_fix_on_save = 1
+" let g:ale_fix_on_save = 1
 
 " Linters
 let g:ale_linters = {
-      \   'typescript': ['tslint', 'tsserver', 'prettier'],
+      \   'typescript': ['tslint'],
       \ }
 
 let g:ale_fixers = {
-      \   'typescript': ['tslint', 'prettier'],
+      \   'typescript': ['tslint'],
       \ }
 
 " Fix errors
@@ -686,8 +676,8 @@ inoremap <silent> <leader>; <C-\><C-O>:call toggline#End(';')<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:esearch = {
       \ 'adapter':    'ag',
-      \ 'backend':    'nvim',
-      \ 'out':        'win',
+      \ 'backend':    'vimproc',
+      \ 'out':        'qflist',
       \ 'batch_size': 1000,
       \ 'use':        ['visual', 'hlsearch', 'last'],
       \}

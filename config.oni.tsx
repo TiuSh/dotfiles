@@ -1,5 +1,5 @@
-import * as React from "react"
-import * as Oni from "oni-api"
+import * as React from "react";
+import * as Oni from "oni-api";
 
 // export const activate = (oni: Oni.Plugin.Api) => {
 // }
@@ -21,8 +21,10 @@ export const configuration = {
   // "colors.title.background": "#073642",
 
   // Eitor
-  "editor.fontFamily": "Hack-Bold",
+  // "editor.fontFamily": "Hack-Bold",
+  "editor.fontFamily": "FiraCode-Medium",
   "editor.fontSize": "12px",
+  "editor.renderer": "webgl",
 
   // Sidebar
   "sidebar.enabled": false,
@@ -31,18 +33,21 @@ export const configuration = {
   "learning.enabled": false,
 
   // Tabs
-  "tabs.mode": "native",
+  // "tabs.mode": "native",
+
+  // Disable autoPairs
+  "autoClosingPairs.enabled": false,
 
   // Achievements
   "achievements.enabled": false,
 
   // Prettier
   "oni.plugins.prettier": {
-    "formatOnSave": false,
-    "enabled": false
+    enabled: true,
+    formatOnSave: true,
+    settings: {}
   },
-
 
   // Experimental
   "experimental.indentLines.enabled": true
-}
+};
