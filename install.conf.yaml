@@ -8,15 +8,16 @@
 - clean: ['~', '~/.config/nvim', '~/.config/oni', '~/.tmux/plugins', '~/Library/Application Support/Code/User']
 
 - link:
-    ~/.zsh_aliases: config.zsh_aliases
-    ~/.bash_profile: config.bash_profile
     ~/.bashrc: config.bashrc
+    ~/.bash_profile: config.bash_profile
+    ~/.zshrc: config.zshrc
+    ~/.zshenv: config.zshenv
+    ~/.zsh_aliases: config.zsh_aliases
     ~/.ctags: config.ctags
     ~/.gitconfig: config.gitconfig
     ~/.gitignore: config.gitignore
     ~/.spacemacs: config.spacemacs
     ~/.tmux.conf: config.tmux.conf
-    ~/.zshrc: config.zshrc
     ~/.bin/ssh-key: bin/ssh-key
     ~/.tmux/plugins/tpm: tmux-plugin-manager
     ~/.config/nvim/init.vim: config.vim

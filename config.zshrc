@@ -1,36 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
-# Directories to be prepended to $PATH
-declare -a dirs_to_prepend
-dirs_to_prepend=(
-  "/usr/bin"
-  "/usr/local/sbin"
-  "/usr/local/git/bin"
-  "/usr/local/"
-  "$HOME/.bin"
-  "$HOME/.rvm/bin"
-  "$(brew --prefix ruby)/bin"
-  "$(brew --prefix)/share/npm/bin" # Add npm-installed package bin
-  "/Applications/Postgres.app/Contents/Versions/latest/bin" # Postgres.app cli tools
-  "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" # Code CLI
-)
-
-# Explicitly configured $PATH
-PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-
-for dir in ${(k)dirs_to_prepend[@]}
-do
-  if [ -d ${dir} ]; then
-    # If these directories exist, then prepend them to existing PATH
-    PATH="${dir}:$PATH"
-  fi
-done
-
-unset dirs_to_prepend
-
-export PATH
-
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -85,7 +55,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 # You may need to manually set your language environment
-export LANG=fr_FR.UTF-8
+# export LANG=fr_FR.UTF-8
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -100,15 +70,6 @@ fi
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
 # Archey login screen
 # archey -c
 
@@ -121,19 +82,11 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-# Load NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# Load NVM completion
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# Default shell
-export SHELL=/bin/zsh
 
 # Enable true color & italic support
 export TERM="xterm-256color-italic"
-
-# Set the current user as the default
-export DEFAULT_USER=`whoami`
 
 # Add a new line before the prompt
 prompt_end() {
