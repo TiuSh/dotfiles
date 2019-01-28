@@ -1085,6 +1085,16 @@ let g:jsx_ext_required = 0
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Typescript
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap <silent> <leader>tsd :TSDef<cr>
+nmap <silent> <leader>tsc :TSDoc<cr>
+nmap <silent> <leader>tsr :TSRename<cr>
+nmap <silent> <leader>tsf :TSRefs<cr>
+nmap <silent> <leader>tst :TSType<cr>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Mdn Query
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " autocmd FileType typescript setlocal keywordprg=:MdnQueryFirstMatch
