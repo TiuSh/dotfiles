@@ -533,7 +533,7 @@ endif
 autocmd BufNewFile,BufRead *.scss setlocal filetype=scss.css
 
 " Tsx files
-autocmd BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
+autocmd BufNewFile,BufRead *.tsx setlocal filetype=typescript
 
 " YAML files
 autocmd BufNewFile,BufRead *.yaml,*.yml setlocal filetype=yaml
@@ -744,7 +744,7 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor --nogroup --hidden --ignore ".git/" -g ""'
 
   " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 1
+  let g:ctrlp_use_caching = 0
 endif
 
 map <C-b> :CtrlPBuffer<cr>
@@ -942,11 +942,11 @@ let g:ale_sign_warning = '⚠'
 let g:airline#extensions#ale#enabled = 1
 
 " Fix files on save
-let g:ale_fix_on_save = 0
+let g:ale_fix_on_save = 1
 
 " Linters
 let g:ale_linters = {
-      \   'typescript': ['tslint', 'tsserver'],
+      \   'typescript': ['tslint', 'tsserver', 'prettier'],
       \ }
 
 let g:ale_fixers = {
