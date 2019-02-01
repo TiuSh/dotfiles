@@ -32,13 +32,9 @@ unset dirs_to_prepend
 
 export PATH
 
-# Add Ruby and NPM installed bin
-export PATH="$PATH:$(brew --prefix ruby)/bin"
-export PATH="$PATH:$(brew --prefix)/share/npm/bin"
-
-# Set language environment
-export LANG=fr_FR.UTF-8
-
-# Load NVM env variables
+# Load NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# Set language environment
+export LANG=en_US.UTF-8
