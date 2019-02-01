@@ -719,13 +719,13 @@ let g:ctrlp_custom_ignore = {
   \ 'link': 'some_bad_symbolic_links',
 \ }
 let g:ctrlp_buftag_types = {
-  \ 'yaml': '-f - --sort=no --excmd=pattern --fields=nKs --extras= ',
-  \ 'css': '-f - --sort=no --excmd=pattern --fields=nKs --extras= ',
-  \ 'typescript': '-f - --sort=no --excmd=pattern --fields=nKs --extras= ',
-  \ 'coffee': '-f - --sort=no --excmd=pattern --fields=nKs --extras= ',
+  \ 'yaml': '--options=$HOME/.ctags -f - --sort=no --excmd=pattern --fields=nKs --extras= ',
+  \ 'css': '--options=$HOME/.ctags -f - --sort=no --excmd=pattern --fields=nKs --extras= ',
+  \ 'typescript': '--options=$HOME/.ctags -f - --sort=no --excmd=pattern --fields=nKs --extras= ',
+  \ 'coffee': '--options=$HOME/.ctags -f - --sort=no --excmd=pattern --fields=nKs --extras= ',
   \ 'javascript': {
   \   'bin': 'ctags',
-  \   'args': '-f - --sort=no --excmd=pattern --fields=nKs --extras= ',
+  \   'args': '--options=$HOME/.ctags -f - --sort=no --excmd=pattern --fields=nKs --extras= ',
   \ },
 \ }
 let g:ctrlp_prompt_mappings = {
@@ -734,6 +734,7 @@ let g:ctrlp_prompt_mappings = {
   \ 'PrtHistory(-1)':       ['<c-k>'],
   \ 'PrtHistory(1)':        ['<c-j>'],
 \ }
+
 if executable('ag')
   " Use ag over grep
   set grepprg=ag\ --nogroup\ --nocolor
