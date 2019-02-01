@@ -4,7 +4,7 @@ set nocompatible
 " => Plugins (vim-plug)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.local/share/nvim/plugged')
 
 " My plugins
 
@@ -73,8 +73,8 @@ Plug 'jiangmiao/auto-pairs'
 " Plug 'itmammoth/doorboy.vim' TODO: Test
 Plug 'junegunn/vim-easy-align'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" Plug 'roxma/nvim-completion-manager'
 Plug 'Shougo/echodoc.vim'
+" Plug 'roxma/nvim-completion-manager'
 " Plug 'Shougo/neoinclude.vim' TODO: Test
 " Plug 'prabirshrestha/asyncomplete.vim' TODO: Test
 Plug 'SirVer/ultisnips'
@@ -120,11 +120,11 @@ Plug 'justinj/vim-react-snippets'
 " Plug 'jungomi/vim-mdnquery'
 
 " CoffeeScript
-Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
+" Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 
 " Typescript
-" Plug 'HerringtonDarkholme/yats.vim'
-Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
+Plug 'HerringtonDarkholme/yats.vim', { 'for': 'typescript' }
+" Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'mhartington/nvim-typescript', { 'for': 'typescript', 'do': './install.sh' },
 " Plug 'mhartington/vim-angular2-snippets'
 Plug 'ianks/vim-tsx', { 'for': 'typescript' }
@@ -139,9 +139,9 @@ Plug 'ianks/vim-tsx', { 'for': 'typescript' }
 Plug 'jparise/vim-graphql'
 
 " Haskell
-Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
-Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
-Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
+" Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
+" Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
+" Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
 
 " Python
 Plug 'zchee/deoplete-jedi', { 'for': 'python' }
@@ -939,14 +939,14 @@ let g:ale_fixers = {
       \   'typescript': ['tslint', 'prettier'],
       \ }
 
-" Move between warnings & errors
+" Move between warnings & errors with Ctrl-E + P/N
 nmap <silent> <C-e>p <Plug>(ale_previous_wrap)
 nmap <silent> <C-e>n <Plug>(ale_next_wrap)
 
-" Fix buffer with <C-e>e
-nmap <silent> <C-e>e :ALEFix<cr>
+" Fix errors with Ctrl-E + E
+nmap <silent> <C-e>e <Plug>:ALEFix<cr>
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => NERD Commenter
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 inoremap <leader>cc <C-\><C-O>:call NERDComment('n', 'comment')<cr>
@@ -997,11 +997,6 @@ let g:deoplete#file#enable_buffer_path = 1
 " Autoclose preview window
 " autocmd CompleteDone * pclose!
 
-" Debug
-" let g:deoplete#enable_debug = 1
-" let g:deoplete#enable_profile = 1
-" call deoplete#enable_logging('DEBUG', 'deoplete.log')
-
 " Languages specifics
 " let g:deoplete#omni#input_patterns = {}
 " let g:deoplete#omni#input_patterns.php = '\w+|[^. \t]->\w*|\w+::\w*'
@@ -1018,6 +1013,12 @@ endif
 let g:deoplete#sources#omni#input_patterns = {
 \   "ruby" : '[^. *\t]\.\w*\|\h\w*::',
 \}
+
+" Debug
+" let g:deoplete#enable_debug = 1
+" let g:deoplete#enable_profile = 1
+" call deoplete#enable_logging('DEBUG', 'deoplete.log')
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => UltiSnips
