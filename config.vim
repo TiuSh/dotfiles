@@ -47,6 +47,7 @@ Plug 'tpope/vim-dispatch'
 " Plug 'simeji/winresizer'
 Plug 'gcmt/taboo.vim'
 Plug 'Valloric/ListToggle'
+Plug 'zirrostig/vim-schlepp'
 
 " Themes
 " Plug 'frankier/neovim-colors-solarized-truecolor-only'
@@ -885,6 +886,18 @@ nnoremap <leader>tr :TabooRename<Space>
 " Toggle location list & quick fix with Ctrl+L/Q
 let g:lt_location_list_toggle_map = 'gl'
 let g:lt_quickfix_list_toggle_map = 'gc'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Schlepp
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Move visual blocks / lines with K/J/H/L
+vmap <unique> K <Plug>SchleppUp
+vmap <unique> J <Plug>SchleppDown
+vmap <unique> H <Plug>SchleppLeft
+vmap <unique> L <Plug>SchleppRight
+
+" Duplicate visual block / line under cursor
+vmap <unique> D <Plug>SchleppDup
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => TMUX
