@@ -1093,6 +1093,13 @@ let g:jsx_ext_required = 0
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Nvim Typescript
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Display type info in echo area on hold
+let g:nvim_typescript#type_info_on_hold = 1
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Ruby Monster
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " let g:monster#completion#rcodetools#backend = "async_rct_complete"
