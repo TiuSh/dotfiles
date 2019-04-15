@@ -42,7 +42,6 @@ Plug 'terryma/vim-multiple-cursors'
 " Plug 'mhinz/vim-startify'
 " Plug 'airblade/vim-rooter'
 Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-dispatch'
 " Plug 'dhruvasagar/vim-zoom'
 " Plug 'simeji/winresizer'
 Plug 'gcmt/taboo.vim'
@@ -67,21 +66,23 @@ Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/gv.vim'
 
 " All languages
+" Plug 'sheerun/vim-polyglot' TODO: Test
 " Plug 'neomake/neomake'
-Plug 'w0rp/ale'
 Plug 'scrooloose/nerdcommenter'
 Plug 'jiangmiao/auto-pairs'
 " Plug 'itmammoth/doorboy.vim' TODO: Test
 Plug 'junegunn/vim-easy-align'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/echodoc.vim'
 " Plug 'roxma/nvim-completion-manager'
 " Plug 'Shougo/neoinclude.vim' TODO: Test
 " Plug 'prabirshrestha/asyncomplete.vim' TODO: Test
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install() }}
+Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-solargraph', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-tslint-plugin', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
 Plug 'SirVer/ultisnips'
-" Plug 'Shougo/neosnippet.vim' TODO: Test
-" Plug 'Shougo/neosnippet-snippets' TODO: Test
-Plug 'honza/vim-snippets'
 Plug 'tpope/vim-surround'
 Plug 'terryma/vim-expand-region'
 Plug 'vim-scripts/argtextobj.vim'
@@ -104,7 +105,7 @@ Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'mattn/emmet-vim'
 
 " Twig
-Plug 'lumiliet/vim-twig', { 'for': 'twig' }
+" Plug 'lumiliet/vim-twig', { 'for': 'twig' }
 
 " CSS
 Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
@@ -114,20 +115,14 @@ Plug 'cakebaker/scss-syntax.vim', { 'for': 'css' }
 " Plug 'jaawerth/neomake-local-eslint-first'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'elzr/vim-json'
-" Plug 'ternjs/tern_for_vim', { 'do': 'npm install -g tern && npm install' }
-" Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 Plug 'mxw/vim-jsx', { 'for': 'javascript' }
-Plug 'justinj/vim-react-snippets'
-" Plug 'jungomi/vim-mdnquery'
 
 " CoffeeScript
 " Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 
 " Typescript
-Plug 'HerringtonDarkholme/yats.vim', { 'for': 'typescript' }
-" Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
-Plug 'mhartington/nvim-typescript', { 'for': 'typescript', 'do': './install.sh' },
-" Plug 'mhartington/vim-angular2-snippets'
+" Plug 'HerringtonDarkholme/yats.vim', { 'for': 'typescript' }
+Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'ianks/vim-tsx', { 'for': 'typescript' }
 
 " PHP
@@ -145,7 +140,6 @@ Plug 'jparise/vim-graphql'
 " Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
 
 " Python
-Plug 'zchee/deoplete-jedi', { 'for': 'python' }
 Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
 
 " Ruby / Rails
@@ -313,6 +307,14 @@ set ffs=unix,dos,mac
 set splitright
 set splitbelow
 
+" Updatetime for CursorHold & CursorHoldI
+set updatetime=300
+
+" Don't give |ins-completion-menu| messages.
+set shortmess+=c
+
+" Always show signcolumns
+set signcolumn=yes
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
@@ -351,6 +353,7 @@ set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
 set nobackup
+set nowritebackup
 set nowb
 set noswapfile
 
@@ -533,7 +536,7 @@ endif
 autocmd BufNewFile,BufRead *.scss setlocal filetype=scss.css
 
 " Tsx files
-autocmd BufNewFile,BufRead *.tsx setlocal filetype=typescript
+" autocmd BufNewFile,BufRead *.tsx setlocal filetype=typescript
 
 " YAML files
 autocmd BufNewFile,BufRead *.yaml,*.yml setlocal filetype=yaml
@@ -766,9 +769,9 @@ function! s:fzf_checkout_sink(line)
   if !empty(remote)
     let branch = matchstr(a:line, '[^\/]*$')
 
-    execute 'Dispatch git checkout -b ' . branch . ' ' . a:line
+    execute '!git checkout -b ' . branch . ' ' . a:line
   else
-    execute 'Dispatch git checkout' . a:line
+    execute '!git checkout' . a:line
   endif
 endfunction
 
@@ -785,7 +788,7 @@ command! -bang -nargs=* FzfCheckout
 function! s:fzf_pull_rebase_sink(line)
   let remote_branch = substitute(substitute(a:line, '\/', ' ', ''), '^\s*', '', '')
 
-  execute 'Dispatch git pull --rebase ' . remote_branch
+  execute '!git pull --rebase ' . remote_branch
 endfunction
 
 command! -bang -nargs=* FzfPullRebase
@@ -932,35 +935,6 @@ nnoremap <leader>glog :GV<CR>
 nnoremap <leader>gl :GV<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => ALE
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Change gutter signs
-let g:ale_sign_error = '✖'
-let g:ale_sign_warning = '⚠'
-
-" Enable airline support
-let g:airline#extensions#ale#enabled = 1
-
-" Fix files on save
-let g:ale_fix_on_save = 1
-
-" Linters
-let g:ale_linters = {
-      \   'typescript': ['tslint', 'tsserver', 'prettier'],
-      \ }
-
-let g:ale_fixers = {
-      \   'typescript': ['tslint', 'prettier'],
-      \ }
-
-" Move between warnings & errors with Ctrl-E + P/N
-nmap <silent> <C-e>p <Plug>(ale_previous_wrap)
-nmap <silent> <C-e>n <Plug>(ale_next_wrap)
-
-" Fix errors with Ctrl-E + E
-nmap <silent> <C-e>e <Plug>:ALEFix<cr>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => NERD Commenter
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 inoremap <leader>cc <C-\><C-O>:call NERDComment('n', 'comment')<cr>
@@ -982,64 +956,108 @@ nmap ga <Plug>(EasyAlign)
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Deoplete
+" => Conquer Of Completion (coc)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Enable on startup
-let g:deoplete#enable_at_startup = 1
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
 
-" Disable completion max width
-let g:deoplete#max_abbr_width = 0
-let g:deoplete#max_menu_width = 0
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
-" File path relative to buffer
-let g:deoplete#file#enable_buffer_path = 1
+" Use <cr> for confirm completion, `<C-g>u` means break undo chain at current position.
+" Coc only does snippet and additional edit on confirm.
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
-" Disable in comments
-" call deoplete#custom#set('_', 'disabled_syntaxes', ['Comment'])
+" Use `[c` and `]c` for navigate diagnostics
+nmap <silent> [c <Plug>(coc-diagnostic-prev)
+nmap <silent> ]c <Plug>(coc-diagnostic-next)
 
-" Autocomplete with TAB
-" inoremap <silent><expr> <TAB>
-      " \ pumvisible() ? "\<C-n>" :
-      " \ <SID>check_back_space() ? "\<TAB>" :
-      " \ deoplete#mappings#manual_complete()
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
-" function! s:check_back_space() abort "{{{
-  " let col = col('.') - 1
-  " return !col || getline('.')[col - 1]  =~ '\s'
-" endfunction"}}}
+" Use K for show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
 
-" Autoclose preview window
-" autocmd CompleteDone * pclose!
+function! s:show_documentation()
+  if &filetype == 'vim'
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
 
-" Languages specifics
-" let g:deoplete#omni#input_patterns = {}
-" let g:deoplete#omni#input_patterns.php = '\w+|[^. \t]->\w*|\w+::\w*'
+" Highlight symbol under cursor on CursorHold
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
-" let g:deoplete#sources#tss#enable_auto_signature_preview = 1
+" Remap for rename current word
+nmap <leader>rn <Plug>(coc-rename)
 
-" Use local Flow bin when provided
-let g:flow_path = StrTrim(system('PATH=$(npm bin):$PATH && which flow'))
+" Remap for format selected region
+vmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
 
-if g:flow_path != 'flow not found'
-  let g:deoplete#sources#flow#flow_bin = g:flow_path
-endif
+augroup mygroup
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  " Update signature help on jump placeholder
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
 
-let g:deoplete#sources#omni#input_patterns = {
-\   "ruby" : '[^. *\t]\.\w*\|\h\w*::',
-\}
+" Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
+vmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
 
-" Debug
-" let g:deoplete#enable_debug = 1
-" let g:deoplete#enable_profile = 1
-" call deoplete#enable_logging('DEBUG', 'deoplete.log')
+" Remap for do codeAction of current line
+nmap <leader>ac  <Plug>(coc-codeaction)
+" Fix autofix problem of current line
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+" Using CocList
+" Show all diagnostics
+nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
+" Manage extensions
+nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
+" Show commands
+nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
+" Find symbol of current document
+nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
+" Search workspace symbols
+nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
+" Do default action for next item.
+nnoremap <silent> <space>j  :<C-u>CocNext<CR>
+" Do default action for previous item.
+nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
+" Resume latest coc list
+nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
+" Airline integration
+let g:airline_section_error = '%{airline#util#wrap(airline#extensions#coc#get_error(),0)}'
+let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => UltiSnips
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Ignore snippets included in plugins
+let g:UltiSnipsSnippetDirectories = [$HOME."/.config/nvim/UltiSnips"]
+
+" Complete snippets with <leader>s and navigate with <leader>n/p
 let g:UltiSnipsExpandTrigger = "<leader>s"
 let g:UltiSnipsJumpForwardTrigger = "<leader>n"
+let g:UltiSnipsJumpBackwardTrigger = "<leader>p"
 
+" Edit snippets in a new tab
+let g:UltiSnipsEditSplit = "tabdo"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Toggline
