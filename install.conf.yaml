@@ -20,6 +20,7 @@
     ~/.tmux.conf: config.tmux.conf
     ~/.bin/ssh-key: bin/ssh-key
     ~/.tmux/plugins/tpm: tmux-plugin-manager
+    ~/.config/nvim/coc-settings.json: config.coc.json
     ~/.config/nvim/init.vim: config.vim
     ~/.config/nvim/UltiSnips: UltiSnips
     ~/.config/oni/config.tsx: config.oni.tsx

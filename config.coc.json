@@ -1,0 +1,10 @@
+{
+  "suggest.triggerAfterInsertEnter": true,
+
+  "coc.preferences.formatOnSaveFiletypes": ["javascript", "javascriptreact", "typescript", "typescriptreact", "json", "graphql"],
+
+  "tslint.alwaysShowRuleFailuresAsWarnings": false,
+  "tslint.autoFixOnSave": true,
+
+  "solargraph.enable": false
+}
