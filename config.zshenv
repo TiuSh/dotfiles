@@ -32,9 +32,5 @@ unset dirs_to_prepend
 
 export PATH
 
-# Load NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-
 # Set language environment
 export LANG=en_US.UTF-8
