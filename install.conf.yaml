@@ -21,6 +21,7 @@
     ~/.bin/ssh-key: bin/ssh-key
     ~/.tmux/plugins/tpm: tmux-plugin-manager
     ~/.config/nvim/init.vim: config.vim
+    ~/.config/nvim/UltiSnips: UltiSnips
     ~/.config/oni/config.tsx: config.oni.tsx
     ~/.config/oni/init.vim: config.oni.vim
     '~/Library/Application Support/Code/User/settings.json': config.vscode.settings.json

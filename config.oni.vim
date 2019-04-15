@@ -17,7 +17,6 @@ Plug 'svermeulen/vim-easyclip'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-dispatch'
-" Plug 'gcmt/taboo.vim'
 Plug 'Valloric/ListToggle'
 " Plug 'lifepillar/vim-solarized8'
 Plug 'eugen0329/vim-esearch'
@@ -43,6 +42,7 @@ Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-indent'
 Plug 'glts/vim-textobj-comment'
 Plug 'TiuSh/vim-toggline'
+Plug 'SirVer/ultisnips'
 
 call plug#end()
 
@@ -334,7 +334,7 @@ inoremap <M-CR> <ESC>mzo<ESC>`za
 autocmd BufNewFile,BufRead *.scss setlocal filetype=scss.css
 
 " Tsx files
-autocmd BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
+autocmd BufNewFile,BufRead *.tsx setlocal filetype=typescript
 
 " YAML files
 autocmd BufNewFile,BufRead *.yaml,*.yml setlocal filetype=yaml
@@ -577,14 +577,6 @@ let g:EasyClipShareYanks = 1
 let g:EasyClipUseSubstituteDefaults = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Taboo
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let g:taboo_tab_format = '%m %N. %f [%W] '
-" let g:taboo_renamed_tab_format = '%m %N. %l [%W] '
-
-" nnoremap <leader>tr :TabooRename<Space>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => ListToggle
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Toggle location list & quick fix with Ctrl+L/Q
@@ -635,12 +627,12 @@ let g:ale_fixers = {
       \   'typescript': ['tslint'],
       \ }
 
-" Fix errors
-nmap <silent> <C-e>f <Plug>(ale-fix)
-
-" Move between warnings & errors
+" Move between warnings & errors with Ctrl-e + p/n
 nmap <silent> <C-e>p <Plug>(ale_previous_wrap)
 nmap <silent> <C-e>n <Plug>(ale_next_wrap)
+
+" Fix errors with Ctrl-e + e
+nmap <silent> <C-e>e <Plug>(ale-fix)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => NERD Commenter
@@ -651,7 +643,6 @@ inoremap <leader>c<space> <C-\><C-O>:call NERDComment('n', 'toggle')<cr>
 
 " Add / remove 1 space after comment delimiter
 let g:NERDSpaceDelims = 1
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => EasyAlign
@@ -672,6 +663,18 @@ inoremap <silent> <leader>, <C-\><C-O>:call toggline#End(',')<cr>
 inoremap <silent> <leader>; <C-\><C-O>:call toggline#End(';')<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Ultisnips
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Snippets directories
+let g:UltiSnipsSnippetDirectories=['UltiSnips']
+
+" Expand snippet with <leader>s and navigate with <leader>p/n
+let g:UltiSnipsExpandTrigger = '<leader>s'
+let g:UltiSnipsListSnippets = '<c-tab>'
+let g:UltiSnipsJumpForwardTrigger = '<leader>n'
+let g:UltiSnipsJumpBackwardTrigger = '<leader>p'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => ESearch
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:esearch = {
@@ -685,10 +688,8 @@ let g:esearch = {
 " Prevent autocmd, shell and write commands from being run inside project-specific files
 set secure
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Quick Highlight
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nmap <leader>m <Plug>(quickhl-manual-this)
 xmap <leader>m <Plug>(quickhl-manual-this)
-

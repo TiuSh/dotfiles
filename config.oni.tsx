@@ -38,6 +38,9 @@ export const configuration = {
   // Disable autoPairs
   "autoClosingPairs.enabled": false,
 
+  // Disable snippets
+  "snippets.enabled": false,
+
   // Achievements
   "achievements.enabled": false,
 
@@ -47,6 +50,13 @@ export const configuration = {
     formatOnSave: true,
     settings: {}
   },
+
+  // Quick Open
+  "editor.quickOpen.execCommand":
+    'ag ${search} -l --nocolor --nogroup --hidden --ignore ".git/" -g ""',
+  "quickOpen.defaultOpenMode": Oni.FileOpenMode.ExistingTab,
+  "editor.quickOpen.defaultOpenMode": Oni.FileOpenMode.ExistingTab,
+  "editor.quickOpen.alternativeOpenMode": Oni.FileOpenMode.NewTab,
 
   // Experimental
   "experimental.indentLines.enabled": true
