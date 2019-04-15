@@ -1,0 +1,103 @@
+# Typescript Snippets
+# ===================
+
+snippet im "import ... from ..."
+import $1 from "$3${2:$1}";$0
+endsnippet
+
+snippet imn "import {...} from ..."
+import { $2 } from "$1";$0
+endsnippet
+
+snippet ret "{ return ...; }" "snip.visual_mode" eim
+{
+	$0
+
+	return ${VISUAL};
+}
+endsnippet
+
+# TSLint
+# ======
+snippet td "// tslint:disable:..."
+// tslint:disable${1::$0}
+endsnippet
+
+snippet tdn "// tslint:disable-next-line:..."
+// tslint:disable-next-line${1::$0}
+endsnippet
+
+snippet tdl "// tslint:disable-line:..."
+// tslint:disable-line${1::$0}
+endsnippet
+
+# React Snippets
+# ==============
+
+# Functional Component
+snippet rfc "Functional Component" m
+import * as React from "react";
+
+${1:export interface Props {
+	$2
+}
+
+}const ${3:Component}: React.SFC`!p snip.rv = "<Props>" if len(t[1]) > 1 else ""` = (${5:`!p snip.rv = "props" if len(t[1]) > 1 else ""`}) => {
+	return ${0:<div />};
+}
+
+export default $3;
+endsnippet
+
+# Class Component
+snippet rcc "Class Component" m
+import * as React from "react";
+
+${1:export interface Props {
+	$2
+}}
+
+export default class ${3:Component} extends React.Component${4:<Props>} {
+	public render() {
+		${5:const { $6 } = this.props;}
+
+		return ${0:<div />};
+	}
+}
+endsnippet
+
+# Jest Snippets
+# =============
+
+# Describe
+snippet desc "describe(..., () => {});" b
+describe("${1:description}", () => {
+	$0
+});
+endsnippet
+
+# It
+snippet it "it(..., () => {});" b
+it("${1:should ...}", () => {
+	$0
+});
+endsnippet
+
+# Before Each
+snippet be "beforeEach(() => {});" bm
+beforeEach(() => {
+	$1
+});
+$0
+endsnippet
+
+# Lodash Snippets
+# ===============
+snippet lget "get(..., ...)" i
+get($1, "$2")$0
+endsnippet
+
+# Visual get wrapper
+snippet lget "get(..., ...)" "snip.visual_mode" ei
+get(${VISUAL:/^([^.]+)\..*$/$1/}, "${VISUAL:/^([^.]+)\.(.*)$/$2/}")$0
+endsnippet

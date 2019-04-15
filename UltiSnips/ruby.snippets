@@ -1,0 +1,48 @@
+# Ruby Snippets
+# ===================
+
+# RSpec
+# =====
+
+# Describe
+snippet desc "describe ... do ... end" b
+describe "${1:description}", ${2:type: ${3:feature}} do
+	$0
+end
+endsnippet
+
+# Context
+snippet con "context ... do ... end" b
+context "${1:description}" do
+	$0
+end
+endsnippet
+
+# Let
+snippet let "let(:subject) { ... }" b
+let(:${1:subject}) { ${2:create(:${3:$1}${4:, ${5:attribute: value}})} }$0
+endsnippet
+
+# Let
+snippet letb "let(:subject) do ... end" bm
+let(:${1:subject}) do
+	${2:create(${3::model})}
+end
+$0
+endsnippet
+
+# It
+snippet it "it ... do ... end" b
+it "${1:should ...}" do
+	$0
+end
+endsnippet
+
+# Before Each
+snippet be "before do ... end" bm
+before do
+	$1
+end
+$0
+endsnippet
+
