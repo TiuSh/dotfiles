@@ -3,8 +3,9 @@
 
   "coc.preferences.formatOnSaveFiletypes": ["javascript", "javascriptreact", "typescript", "typescriptreact", "json", "graphql"],
 
+  "tsserver.enableJavascript": false,
   "tslint.alwaysShowRuleFailuresAsWarnings": false,
   "tslint.autoFixOnSave": true,
 
-  "solargraph.enable": false
+  "solargraph.completion": false
 }
