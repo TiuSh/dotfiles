@@ -357,6 +357,8 @@ set nowritebackup
 set nowb
 set noswapfile
 
+" Allow netrw to remove non-empty directories
+let g:netrw_localrmdir='rm -r'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
