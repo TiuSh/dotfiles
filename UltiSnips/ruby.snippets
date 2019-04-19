@@ -1,6 +1,28 @@
 # Ruby Snippets
 # ===================
 
+# Ruby
+# ====
+
+# Do block
+snippet do "do ... end"
+do
+	$0
+end
+endsnippet
+
+# Do block with variable
+snippet dov "do |v| ... end"
+do |$1|
+	$0
+end
+endsnippet
+
+# Binding.pry
+snippet bp "binding.pry" b
+binding.pry
+endsnippet
+
 # RSpec
 # =====
 
@@ -18,12 +40,12 @@ context "${1:description}" do
 end
 endsnippet
 
-# Let
+# Let inline
 snippet let "let(:subject) { ... }" b
 let(:${1:subject}) { ${2:create(:${3:$1}${4:, ${5:attribute: value}})} }$0
 endsnippet
 
-# Let
+# Let block
 snippet letb "let(:subject) do ... end" bm
 let(:${1:subject}) do
 	${2:create(${3::model})}
@@ -46,3 +68,7 @@ end
 $0
 endsnippet
 
+# Expect
+snippet ex "expect(...).to ..." b
+expect($1).to $0
+endsnippet

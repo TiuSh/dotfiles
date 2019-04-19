@@ -34,16 +34,22 @@ endsnippet
 # React Snippets
 # ==============
 
+# Import React
+snippet imr "Import React" m
+import React from "react";
+$0
+endsnippet
+
 # Functional Component
-snippet rfc "Functional Component" m
-import * as React from "react";
+snippet rfc "Function Component" m
+import React from "react";
 
 ${1:export interface Props {
 	$2
 }
 
-}const ${3:Component}: React.SFC`!p snip.rv = "<Props>" if len(t[1]) > 1 else ""` = (${5:`!p snip.rv = "props" if len(t[1]) > 1 else ""`}) => {
-	return ${0:<div />};
+}const ${3:Component}: React.FunctionComponent`!p snip.rv = "<Props>" if len(t[1]) > 1 else ""` = (${5:`!p snip.rv = "props" if len(t[1]) > 1 else ""`}) => {
+	return ${0:null};
 }
 
 export default $3;
