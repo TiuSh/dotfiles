@@ -49,8 +49,8 @@ Plug 'Valloric/ListToggle'
 Plug 'zirrostig/vim-schlepp'
 
 " Themes
-" Plug 'frankier/neovim-colors-solarized-truecolor-only'
-Plug 'lifepillar/vim-solarized8'
+Plug 'frankier/neovim-colors-solarized-truecolor-only'
+" Plug 'lifepillar/vim-solarized8'
 " Plug 'rakr/vim-one'
 
 " TMUX
@@ -329,7 +329,8 @@ syntax enable
 
 " Color Scheme
 set background=dark
-colorscheme solarized8_high
+" colorscheme solarized8_high
+colorscheme solarized
 
 " Enable true color support
 set termguicolors
