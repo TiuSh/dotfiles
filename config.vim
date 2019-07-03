@@ -47,6 +47,8 @@ Plug 'tpope/vim-unimpaired'
 Plug 'gcmt/taboo.vim'
 Plug 'Valloric/ListToggle'
 Plug 'zirrostig/vim-schlepp'
+Plug 'wincent/ferret'
+Plug 'ronakg/quickr-preview.vim'
 
 " Themes
 Plug 'frankier/neovim-colors-solarized-truecolor-only'
@@ -614,7 +616,7 @@ function! VisualSelection(direction) range
     elseif a:direction == 'gv'
         call CmdLine("vimgrep " . '/'. l:pattern . '/' . ' **/*.')
     elseif a:direction == 'replace'
-        call CmdLine("%s" . '/'. l:pattern . '/')
+        call CmdLine("%s" . '/'. l:pattern . '/' . l:pattern)
     elseif a:direction == 'f'
         execute "normal /" . l:pattern . "^M"
     endif
@@ -906,6 +908,18 @@ vmap <unique> L <Plug>SchleppRight
 
 " Duplicate visual block / line under cursor
 vmap <unique> D <Plug>SchleppDup
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Ferret
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:FerretNvim = 1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Quickr Preview
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:quickr_preview_keymaps = 0
+let g:quickr_preview_position = 'below'
+let g:quickr_preview_on_cursor = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => TMUX
