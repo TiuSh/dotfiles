@@ -76,9 +76,11 @@ Plug 'junegunn/vim-easy-align'
 " Plug 'Shougo/neoinclude.vim' TODO: Test
 " Plug 'prabirshrestha/asyncomplete.vim' TODO: Test
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install() }}
+Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-solargraph', {'do': 'yarn install --frozen-lockfile'}
+" Plug 'neoclide/coc-solargraph', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-stylelint', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-tslint-plugin', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}

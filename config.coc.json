@@ -1,11 +1,27 @@
 {
   "suggest.triggerAfterInsertEnter": true,
 
-  "coc.preferences.formatOnSaveFiletypes": ["javascript", "javascriptreact", "typescript", "typescriptreact", "json", "graphql"],
+  "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "json",
+    "graphql"
+  ],
 
   "tsserver.enableJavascript": false,
   "tslint.alwaysShowRuleFailuresAsWarnings": false,
   "tslint.autoFixOnSave": true,
+  "eslint.enable": true,
+  "eslint.filetypes": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
 
-  "solargraph.completion": false
+  "solargraph.completion": false,
+
+  "stylelint.enable": true
 }
