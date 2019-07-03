@@ -427,7 +427,8 @@ map <silent> <leader><space> :noh<cr>
 " Smart way to move between windows
 map <C-j> <C-W>j
 map <C-k> <C-W>k
-map <C-h> <C-W>h
+" map <C-h> <C-W>h
+map <Backspace> <C-W>h
 map <C-l> <C-W>l
 
 " Open split windows
@@ -477,7 +478,8 @@ map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
 " Specify the behavior when switching between buffers
 try
-  set switchbuf=useopen,usetab,newtab
+  set switchbuf=useopen,usetab
+  ",newtab
   set stal=2
 catch
 endtry
