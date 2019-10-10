@@ -37,6 +37,7 @@
   - fzf
   - git
   - git-extras
+  - hub
   - n
   - neovim
   - python

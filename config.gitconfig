@@ -87,6 +87,9 @@
         # Misc
         publish = "!git push --set-upstream origin $(git branch-name)"
 
+        # Github
+        pr = !hub pull-request --base develop --assign tiush --push --draft
+
   # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
   # Find commits by source code
