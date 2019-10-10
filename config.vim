@@ -235,6 +235,7 @@ set wildignore+=*.sw?                            " Vim swap files
 set wildignore+=.DS_Store                        " OSX
 set wildignore+=*.obj,*.rbc,*.class,*.gem        " Disable output and VCS files
 set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz " Disable archive files
+set wildignore+=*.meteor                         " Other stuff...
 
 " Show relative line numbers
 set number
@@ -428,8 +429,7 @@ map <silent> <leader><space> :noh<cr>
 " Smart way to move between windows
 map <C-j> <C-W>j
 map <C-k> <C-W>k
-" map <C-h> <C-W>h
-map <Backspace> <C-W>h
+map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 " Open split windows
@@ -571,7 +571,6 @@ if executable('ag')
   " Find TODOs comments
   noremap <leader>td :AgCmd TODO<cr>
 endif
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Omicomplete
@@ -727,11 +726,6 @@ let g:airline_exclude_preview = 1
 let g:ctrlp_open_new_file = 'r'
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn|meteor)$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ 'link': 'some_bad_symbolic_links',
-\ }
 let g:ctrlp_buftag_types = {
   \ 'yaml': '--options=$HOME/.ctags -f - --sort=no --excmd=pattern --fields=nKs --extras= ',
   \ 'css': '--options=$HOME/.ctags -f - --sort=no --excmd=pattern --fields=nKs --extras= ',
@@ -749,16 +743,27 @@ let g:ctrlp_prompt_mappings = {
   \ 'PrtHistory(1)':        ['<c-j>'],
 \ }
 
-if executable('ag')
-  " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
+if executable('rg')
+  " Use ripgrep over grep
+  set grepprg=rg\ --color=never
 
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor --nogroup --hidden --ignore ".git/" -g ""'
+  " Use ripgrep in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
 
-  " ag is fast enough that CtrlP doesn't need to cache
+  " ripgrep is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
 endif
+
+" if executable('ag')
+  " " Use ag over grep
+  " set grepprg=ag\ --nogroup\ --nocolor
+
+  " " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  " let g:ctrlp_user_command = 'ag %s -l --nocolor --nogroup --hidden --ignore ".git/" -g ""'
+
+  " " ag is fast enough that CtrlP doesn't need to cache
+  " let g:ctrlp_use_caching = 0
+" endif
 
 map <C-b> :CtrlPBuffer<cr>
 map <C-t> :CtrlPBufTag<cr>
@@ -769,7 +774,7 @@ map <C-t> :CtrlPBufTag<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " nnoremap <silent> <C-f> :BLines<cr>
 nnoremap <Space> :BLines<cr>
-nnoremap <C-f> :Ag<Space>
+" nnoremap <C-f> :Ag<Space>
 " nmap  <C-m> <plug>(fzf-maps-n)
 
 " FzfCheckout command
@@ -917,6 +922,8 @@ vmap <unique> D <Plug>SchleppDup
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:FerretNvim = 1
 
+nnoremap <C-f> :Ack<Space>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Quickr Preview
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -954,7 +961,7 @@ nnoremap <leader>glog :GV<CR>
 " => GV
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Custom mappings
-nnoremap <leader>gl :GV<CR>
+" nnoremap <leader>gl :GV<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => NERD Commenter
