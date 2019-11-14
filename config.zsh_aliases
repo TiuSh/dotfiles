@@ -12,6 +12,8 @@ alias gp!="gp --force"
 alias grbom="gfa && grb origin/master"
 alias gap="ga -p"
 alias ghpr="hub pull-request --base develop --assign tiush --push --draft"
+alias gcdl="gcd && gfa && gl && g brpurge"
+alias gcml="gcm && gfa && gl && g brpurge"
 
 # bundle
 alias be="bundle exec"
