@@ -12,7 +12,6 @@ dirs_to_prepend=(
   "/usr/local/git/bin"
   "/usr/local/"
   "$HOME/.bin"
-  "$HOME/.rvm/bin"
   "/Applications/Postgres.app/Contents/Versions/latest/bin" # Postgres.app cli tools
   "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" # Code CLI
 )
@@ -34,3 +33,6 @@ export PATH
 
 # Set language environment
 export LANG=en_US.UTF-8
+
+# Load RVM into a shell session *as a function*
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"

@@ -21,7 +21,7 @@
     "typescriptreact"
   ],
 
-  "solargraph.completion": false,
+  "solargraph.completion": true,
 
   "stylelint.enable": true
 }
