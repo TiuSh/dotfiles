@@ -9,6 +9,10 @@ snippet imn "import {...} from ..."
 import { $2 } from "$1";$0
 endsnippet
 
+snippet im* "import * as ... from ..."
+import * as $1 from "$3${2:$1}";$0
+endsnippet
+
 snippet ret "{ return ...; }" "snip.visual_mode" eim
 {
 	$0
