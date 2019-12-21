@@ -404,15 +404,15 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>-996 727 631 77 -1440 649 1440 900 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>-1030 1030 620 392 -1440 649 1440 900 </string>
+	<string>230 1146 620 392 0 0 1080 1920 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>97 330 606 469 0 0 1080 1920 </string>
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>269 270 1016 512 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>201 464 585 402 0 0 1440 900 </string>
+	<string>0 0 585 402 0 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>201 419 665 452 0 0 1440 900 </string>
+	<string>31 475 585 402 0 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>102 152 585 402 0 0 1080 1920 </string>
 	<key>NeverWarnAboutShortLivedSessions_1EDD4B58-3DBE-45DA-BA8B-EC7B65D5D89F</key>
@@ -2125,11 +2125,13 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
-		<string>3.3.2</string>
-		<string>3.2.9</string>
+		<string>3.3.6</string>
 		<string>3.3.1</string>
-		<string>3.3.4</string>
 		<string>3.3.3</string>
+		<string>3.3.5</string>
+		<string>3.2.9</string>
+		<string>3.3.2</string>
+		<string>3.3.4</string>
 	</array>
 	<key>NoSyncFrame_SessionsPreferences</key>
 	<dict>
@@ -2152,7 +2154,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>E6E8D4F0-2D9A-4186-A720-F4BE34AD9572</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>19</integer>
+	<integer>34</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>587066529.59910202</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -2680,7 +2682,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>currentSession</string>
+				<string>tmuxWindow</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -2702,9 +2704,25 @@
 			</dict>
 			<dict>
 				<key>isTerminal</key>
+				<false/>
+				<key>name</key>
+				<string>title</string>
+				<key>nonterminalContext</key>
+				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
 				<string>tmuxWindowTitle</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>title</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -2862,19 +2880,19 @@
 			</dict>
 			<dict>
 				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentSession</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
 				<false/>
 				<key>name</key>
 				<string>currentSession</string>
 				<key>nonterminalContext</key>
 				<integer>1</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>tmuxWindow</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
 			</dict>
 		</array>
 		<key>4</key>
@@ -2955,13 +2973,13 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-09-27T19:34:13Z</date>
+	<date>2019-10-30T21:59:19Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<true/>
+	<false/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>VisualIndicatorForEsc</key>
@@ -2975,6 +2993,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.3.4</string>
+	<string>3.3.6</string>
 </dict>
 </plist>
