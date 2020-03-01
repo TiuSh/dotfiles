@@ -178,6 +178,9 @@ Plug 'tpope/vim-rails', { 'on': [
       \ 'Rexctract'
       \ ] }
 
+" Svelte
+Plug 'evanleck/vim-svelte'
+
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
