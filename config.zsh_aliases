@@ -20,7 +20,7 @@ alias be="bundle exec"
 alias fs="be foreman start"
 
 # POTLOC
-alias du="docker-compose up -d"
+alias dcu="docker-compose up -d"
 alias br="bin/reset"
 alias bs="bin/setup"
 alias bw="bin/webpack-dev-server"
