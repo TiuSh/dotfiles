@@ -25,6 +25,27 @@ snippet cl "console.log()"
 console.log($0);
 endsnippet
 
+snippet expa "export * from ..."
+export * from "$1";$0
+endsnippet
+
+snippet expn "export { ... } from ..."
+export { $3 } from "$1";$0
+endsnippet
+
+snippet expd "export { default } from ..."
+export { default } from "$1";$0
+endsnippet
+
+snippet expnd "export { default as ... } from ..."
+export { default as $1 } from "${2:./$1}";$0
+endsnippet
+
+snippet expad "export */default from ..."
+export * from "$1";
+export { default } from "${1}";$0
+endsnippet
+
 # TSLint
 # ======
 snippet td "// tslint:disable:..."
