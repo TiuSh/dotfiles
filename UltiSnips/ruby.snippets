@@ -35,7 +35,7 @@ endsnippet
 
 # Describe
 snippet desc "describe ... do ... end" b
-describe "${1:description}", ${2:type: ${3:feature}} do
+describe "${1:description}"${2:, type: ${3:feature}} do
 	$0
 end
 endsnippet
@@ -77,5 +77,5 @@ endsnippet
 
 # Expect
 snippet ex "expect(...).to ..." b
-expect($1).to $0
+expect($1).${2:not_}to $0
 endsnippet
