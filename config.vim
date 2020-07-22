@@ -521,6 +521,19 @@ vmap <D-j> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <D-k> :m'<-2<cr>`>my`<mzgv`yo`z
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => netrw mappings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+augroup netrw_mapping
+    autocmd!
+    autocmd filetype netrw call NetrwMapping()
+augroup END
+
+function! NetrwMapping()
+    noremap <buffer> <leader>c :!cp -r
+    noremap <buffer> <leader>m :!mv
+endfunction
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Terminal mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has('nvim')
