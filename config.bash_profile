@@ -14,9 +14,13 @@ if [ -f ~/.bash_fzf ]; then
 fi
 
 # PATH
-export PATH="/usr/local/git/bin:/sw/bin/:/usr/local/bin:/usr/local/:/usr/local/sbin:/usr/local/mysql/bin:$PATH"
-export PATH="$PATH:/usr/local/bin/"
-export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
+export PATH="/usr/local/mysql/bin:$PATH"
+export PATH="/usr/local/git/bin:$PATH"
+export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
+export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
+export PATH="$HOME/.bin:$PATH"
+export PATH="$HOME/.dragonruby:$PATH"
 
 # Default editor
 export EDITOR=nvim

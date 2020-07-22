@@ -7,17 +7,16 @@ export DEFAULT_USER=`whoami`
 # Directories to be prepended to $PATH
 declare -a dirs_to_prepend
 dirs_to_prepend=(
-  "/usr/bin"
-  "/usr/local/sbin"
+  "/usr/local/mysql/bin"
   "/usr/local/git/bin"
-  "/usr/local/"
   "$HOME/.bin"
+  "$HOME/.dragonruby"
   "/Applications/Postgres.app/Contents/Versions/latest/bin" # Postgres.app cli tools
   "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" # Code CLI
 )
 
 # Explicitly configured $PATH
-PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/local"
 
 for dir in ${(k)dirs_to_prepend[@]}
 do
