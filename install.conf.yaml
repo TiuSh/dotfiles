@@ -25,6 +25,7 @@
     ~/.config/nvim/UltiSnips: UltiSnips
     ~/.config/oni/config.tsx: config.oni.tsx
     ~/.config/oni/init.vim: config.oni.vim
+    ~/.config/vscode/init.vim: config.vscode.vim
     '~/Library/Application Support/Code/User/settings.json': config.vscode.settings.json
     '~/Library/Application Support/Code/User/keybindings.json': config.vscode.keybindings.json
     '~/Library/Application Support/Code/User/extensions.json': config.vscode.extensions.json

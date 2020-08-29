@@ -1,5 +1,5 @@
 {
-  "workbench.activityBar.visible": false,
+  "workbench.activityBar.visible": true,
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "workbench.editor.openSideBySideDirection": "down",
   "workbench.sideBar.location": "left",
@@ -167,5 +167,8 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "breadcrumbs.enabled": true,
   "tslint.alwaysShowRuleFailuresAsWarnings": false,
-  "workbench.colorTheme": "Solarized Dark"
+  "workbench.colorTheme": "Solarized Dark",
+  "vscode-neovim.neovimPath": "/usr/local/bin/nvim",
+  "vscode-neovim.neovimInitPath": "~/.config/vscode/init.vim",
+  "liveshare.featureSet": "stable"
 }
