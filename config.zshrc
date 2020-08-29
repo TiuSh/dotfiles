@@ -97,6 +97,15 @@ prompt_end() {
   printf "\n ➜";
 }
 
+# PATH
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/local"
+export PATH="/usr/local/mysql/bin:$PATH"
+export PATH="/usr/local/git/bin:$PATH"
+export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
+export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
+export PATH="$HOME/.bin:$PATH"
+export PATH="$HOME/.dragonruby:$PATH"
+
 # Aliases
 if [ -f ~/.zsh_aliases ]; then
 . ~/.zsh_aliases
@@ -106,6 +115,9 @@ fi
 if [ -f ~/.zshrc.local ]; then
   source ~/.zshrc.local
 fi
+
+# Load RVM into a shell session *as a function*
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
