@@ -179,7 +179,7 @@ Plug 'tpope/vim-rails', { 'on': [
       \ ] }
 
 " Svelte
-Plug 'evanleck/vim-svelte'
+Plug 'evanleck/vim-svelte', { 'branch': 'main' }
 
 call plug#end()
 
