@@ -1,0 +1,81 @@
+# Ruby Snippets
+# ===================
+
+# Ruby
+# ====
+
+# Def
+snippet def "def ... end"
+def $1
+	$0
+end
+endsnippet
+
+# Do block
+snippet do "do ... end"
+do
+	$0
+end
+endsnippet
+
+# Do block with variable
+snippet dov "do |v| ... end"
+do |$1|
+	$0
+end
+endsnippet
+
+# Binding.pry
+snippet bp "binding.pry" b
+binding.pry
+endsnippet
+
+# RSpec
+# =====
+
+# Describe
+snippet desc "describe ... do ... end" b
+describe "${1:description}"${2:, type: ${3:feature}} do
+	$0
+end
+endsnippet
+
+# Context
+snippet con "context ... do ... end" b
+context "${1:description}" do
+	$0
+end
+endsnippet
+
+# Let inline
+snippet let "let(:subject) { ... }" b
+let(:${1:subject}) { ${2:create(:${3:$1}${4:, ${5:attribute: value}})} }$0
+endsnippet
+
+# Let block
+snippet letb "let(:subject) do ... end" bm
+let(:${1:subject}) do
+	${2:create(${3::model})}
+end
+$0
+endsnippet
+
+# It
+snippet it "it ... do ... end" b
+it "${1:should ...}" do
+	$0
+end
+endsnippet
+
+# Before Each
+snippet be "before do ... end" bm
+before do
+	$1
+end
+$0
+endsnippet
+
+# Expect
+snippet ex "expect(...).to ..." b
+expect($1).${2:not_}to $0
+endsnippet
