@@ -1,0 +1,36 @@
+{
+  "suggest.triggerAfterInsertEnter": true,
+
+  "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "json",
+    "graphql"
+  ],
+
+  "tsserver.enableJavascript": false,
+
+  "eslint.options": {
+    "extensions": [".js", ".jsx", ".ts", ".tsx", ".graphql"]
+  },
+  "eslint.probe": [
+    "graphql",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "eslint.validate": [
+    "graphql",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+
+  "solargraph.completion": true,
+
+  "stylelint.enable": true
+}

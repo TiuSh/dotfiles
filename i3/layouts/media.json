@@ -1,0 +1,21 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "pixel",
+    "current_border_width": 3,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 1378,
+       "width": 1129,
+       "x": 0,
+       "y": 0
+    },
+    "name": "Browser",
+    "percent": 1,
+    "swallows": [
+       {
+       //   "class": "^Brave\\-browser$",
+           "window_role": "^browser$"
+       }
+    ],
+    "type": "con"
+}

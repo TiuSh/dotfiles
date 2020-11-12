@@ -1,0 +1,139 @@
+// vim:ts=4:sw=4:et
+{
+    // splitv split container with 3 children
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.333333333333333,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 3,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 410,
+               "width": 654,
+               "x": 0,
+               "y": 0
+            },
+            "name": "Terminal",
+            "percent": 0.333333333333333,
+            "swallows": [
+               {
+                   "title": "^Console-1$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 3,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 410,
+               "width": 654,
+               "x": 0,
+               "y": 0
+            },
+            "name": "Terminal",
+            "percent": 0.333333333333333,
+            "swallows": [
+               {
+                   "title": "^Console-2$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 3,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 410,
+               "width": 654,
+               "x": 0,
+               "y": 0
+            },
+            "name": "Terminal",
+            "percent": 0.333333333333333,
+            "swallows": [
+               {
+                   "title": "^Console-3$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
+{
+    // splitv split container with 2 children
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.333333333333333,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 3,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 410,
+               "width": 654,
+               "x": 0,
+               "y": 0
+            },
+            "name": "Terminal",
+            "percent": 0.9,
+            "swallows": [
+               {
+                   "title": "^Editor$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 3,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 410,
+               "width": 654,
+               "x": 0,
+               "y": 0
+            },
+            "name": "Terminal",
+            "percent": 0.1,
+            "swallows": [
+               {
+                   "title": "^Console-4$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
+{
+    "border": "pixel",
+    "current_border_width": 3,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 1402,
+       "width": 3440,
+       "x": 0,
+       "y": 0
+    },
+    "name": "Browser",
+    "percent": 0.333333333333333,
+    "swallows": [
+       {
+       //   "class": "^Brave\\-browser$",
+           "window_role": "^browser$"
+       }
+    ],
+    "type": "con"
+}
+
