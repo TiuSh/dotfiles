@@ -1,0 +1,71 @@
+! ------------------------------------------------------------------------------
+! Colors
+! ------------------------------------------------------------------------------
+
+#include ".dotfiles/xrdb/themes/solarized"
+
+! ------------------------------------------------------------------------------
+! URxvt configs
+! ------------------------------------------------------------------------------
+
+URxvt.font: xft:Hack Nerd Font:size=12
+URxvt.transparent: true
+URxvt.shading: 25
+URxvt.inheritPixmap: true
+
+URxvt.geometry:               72x18
+URxvt*letterSpace:            0
+URxvt.lineSpace:              0
+URxvt*internalBorder:         24
+URxvt*externalBorder:         0
+URxvt*depth:                  32
+URxvt*saveLines:              1000000
+URxvt*termName:               rxvt-256color
+URxvt*iso14755:               false
+URxvt*scrollBar:              false
+URxvt*scrollBar_right:        false
+URxvt.perl-ext-common:        default,matcher,clipboard,font-size
+URxvt.matcher.button:         1
+
+URxvt.urlLauncher:            xdg-open
+URxvt.underlineURLs:          true
+URxvt.urlButton:              1
+URxvt*buffered:               false
+URxvt.urgentOnBell:           True
+
+! Zoom
+URxvt.keysym.Ctrl-Shift-equal: perl:font-size:increase
+URxvt.keysym.Ctrl-minus: perl:font-size:decrease
+URxvt.keysym.Ctrl-0: perl-font-size:reset
+
+! Copy/paste
+
+! https://unix.stackexchange.com/questions/444773/how-to-disable-the-ctrlshift-binding-iso-14755-in-urxvt/444777#444777
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+! https://unix.stackexchange.com/questions/294337/rebinding-ctrl-alt-cv-to-ctrl-shift-cv-in-urxvt-9-20/329556#329556
+URxvt.keysym.Control-Meta-c:  builtin-string:
+URxvt.keysym.Control-Meta-v:  builtin-string:
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+
+! Navigation
+
+URxvt.keysym.Shift-Up:       command:\033]720;1\007
+URxvt.keysym.Shift-Down:     command:\033]721;1\007
+URxvt.keysym.Control-Up:     \033[1;5A
+URxvt.keysym.Control-Down:   \033[1;5B
+URxvt.keysym.Control-Left:   \033[1;5D
+URxvt.keysym.Control-Right:  \033[1;5C
+
+! ------------------------------------------------------------------------------
+! Xft Font Configuration
+! ------------------------------------------------------------------------------
+
+Xft.autohint: 0
+Xft.antialias: 1
+Xft.dpi: 96
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+Xft.rgba: rgb
