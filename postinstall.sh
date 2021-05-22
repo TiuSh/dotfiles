@@ -3,13 +3,13 @@
 # Post install scripts
 
 # n
-n latest
+sudo n latest
 
 # Neovim
 
 # Setup neovim dependencies
-pip install neovim
-pip3 install neovim
+python -m pip install neovim
+python3 -m pip install neovim
 
 # Update plugins
 nvim +PlugInstall +qa
