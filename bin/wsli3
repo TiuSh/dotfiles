@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# explicitly needed when launching with bash -c from Windows
+export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
+#export LIBGL_ALWAYS_INDIRECT=0
+source ~/.bashrc
+#xrandr --dpi 279
+i3
