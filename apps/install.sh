@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 sudo snap refresh
-sudo snap install chromium firefox slack vlc
+sudo snap install brave chromium firefox slack vlc
 
 # Remove default firefox install (as it has been replaced by snap install)
 sudo apt remove firefox

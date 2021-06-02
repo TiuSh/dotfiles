@@ -59,13 +59,13 @@ exec --no-startup-id i3-msg 'exec gnome-terminal --title="Console-2" --working-d
 exec --no-startup-id i3-msg 'exec gnome-terminal --title="Console-3" --working-directory $WORKSPACE'
 exec --no-startup-id i3-msg 'exec gnome-terminal --title="Console-4" --working-directory $WORKSPACE'
 exec --no-startup-id i3-msg 'exec gnome-terminal --title="Editor" --working-directory $WORKSPACE -- $EDITOR'
-exec --no-startup-id i3-msg 'exec firefox'
+exec --no-startup-id i3-msg 'exec brave'
 
 # Workspace 2
 # exec --no-startup-id i3-msg 'workspace 2'
 # exec --no-startup-id i3-msg 'append_layout $HOME/.config/i3/layouts/slack.json'
 exec --no-startup-id i3-msg 'exec slack'
-exec --no-startup-id i3-msg 'exec google-chrome'
+exec --no-startup-id i3-msg 'exec brave'
 
 ### Binding modes
 
