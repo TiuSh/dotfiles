@@ -74,6 +74,7 @@
 
         # Submodules
         subpl = submodule update --init --recursive
+        subrst = !git submodule deinit -f . && git submodule update --init
 
         # Git flow
         new = !git pull origin develop && git flow feature start

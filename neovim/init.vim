@@ -776,6 +776,7 @@ let g:airline_exclude_preview = 1
 " => CtrlP
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ctrlp_open_new_file = 'r'
+let g:ctrlp_open_multiple_files = '2hjr'
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 let g:ctrlp_buftag_types = {
