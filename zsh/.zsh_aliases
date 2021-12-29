@@ -1,3 +1,6 @@
+# Work
+alias workspace="cd \$WORKSPACE"
+
 # Rails server
 alias rs="bin/rails s"
 alias rc="bin/rails c"

@@ -5,6 +5,10 @@ sudo apt install -y libssl-dev libreadline-dev zlib1g-dev libpq-dev libsqlite3-d
 ln -fs ~/.dotfiles/dev/ruby/.gemrc ~/.gemrc
 ln -fs ~/.dotfiles/dev/ruby/.pryrc ~/.pryrc
 
+# Install rbenv
 git clone https://github.com/rbenv/rbenv.git ~/.rbenv
 mkdir -p ~/.rbenv/plugins
 git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+
+# Install rbenv each
+git clone https://github.com/rbenv/rbenv-each.git "$(rbenv root)"/plugins/rbenv-each

@@ -31,7 +31,14 @@ prompt_end() {
   printf "\n ➜";
 }
 
+# Start keychain
+/usr/bin/keychain -q --nogui $HOME/.ssh/id_rsa
+source $HOME/.keychain/$HOST-sh
+
 # Enable local config file
 if [ -f ~/.zshrc.local ]; then
   source ~/.zshrc.local
 fi
+
+# Open HOME directory
+cd $HOME
