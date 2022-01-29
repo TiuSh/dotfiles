@@ -22,5 +22,15 @@ alias fs="be foreman start"
 # POTLOC
 alias dcu="docker-compose up -d"
 alias br="bin/reset"
-alias bs="bin/setup"
+alias bs="UID=$(id -u) GID=$(id -g) bin/setup"
 alias bw="bin/webpack-dev-server"
+
+alias drr="UID=$(id -u) GID=$(id -g) bin/docker/runner"
+alias drp="bin/docker/rspec"
+alias drs="bin/docker/server"
+alias dbw="bin/docker/webpack-dev-server"
+
+alias tgdo="tiguidou"
+alias docom="tiguidou commit"
+alias dopr="tiguidou pr"
+alias dot="tiguidou ticket"
