@@ -406,17 +406,17 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>-996 727 631 77 -1440 649 1440 900 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>-1030 958 620 392 -1440 595 1440 877 </string>
+	<string>230 1128 620 392 0 0 1080 1897 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>97 330 606 469 0 0 1080 1920 </string>
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>269 270 1016 512 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-1206 835 585 402 -1440 595 1440 900 </string>
+	<string>-1080 295 1138 747 -1080 0 1080 1920 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>2 149 585 402 0 0 1080 1920 </string>
+	<string>-3000 1106 585 402 -3000 674 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>102 152 585 402 0 0 1080 1920 </string>
+	<string>-2675 809 1303 844 -3000 674 1920 1057 </string>
 	<key>NeverWarnAboutShortLivedSessions_1EDD4B58-3DBE-45DA-BA8B-EC7B65D5D89F</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_1EDD4B58-3DBE-45DA-BA8B-EC7B65D5D89F_selection</key>
@@ -2127,15 +2127,18 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
-		<string>3.3.6</string>
-		<string>3.3.8</string>
-		<string>3.3.1</string>
-		<string>3.3.3</string>
 		<string>3.3.5</string>
-		<string>3.3.7</string>
-		<string>3.2.9</string>
-		<string>3.3.2</string>
+		<string>3.3.3</string>
+		<string>3.3.1</string>
+		<string>3.3.8</string>
+		<string>3.3.12</string>
+		<string>3.3.6</string>
+		<string>3.3.11</string>
 		<string>3.3.4</string>
+		<string>3.3.2</string>
+		<string>3.3.9</string>
+		<string>3.2.9</string>
+		<string>3.3.7</string>
 	</array>
 	<key>NoSyncFrame_SessionsPreferences</key>
 	<dict>
@@ -2147,9 +2150,9 @@
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{-1440, 595}, {1440, 900}}</string>
+		<string>{{0, 0}, {1440, 900}}</string>
 		<key>topLeft</key>
-		<string>{-1178, 1373}</string>
+		<string>{182, 792}</string>
 	</dict>
 	<key>NoSyncHaveRequestedFullDiskAccess</key>
 	<true/>
@@ -2158,7 +2161,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>E6E8D4F0-2D9A-4186-A720-F4BE34AD9572</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>60</integer>
+	<integer>137</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>587066529.59910202</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -2977,12 +2980,16 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-02-03T12:56:39Z</date>
+	<date>2020-10-23T13:29:04Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
+	<key>SUUpdateGroupIdentifier</key>
+	<integer>2805675469</integer>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
+	<false/>
+	<key>Size Changes Affect Profile</key>
 	<false/>
 	<key>SoundForEsc</key>
 	<false/>
@@ -2997,6 +3004,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.3.8</string>
+	<string>3.3.12</string>
 </dict>
 </plist>
