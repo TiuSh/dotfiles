@@ -6,11 +6,12 @@
 
         # Branch
         br = branch
-        brclean = !git branch --no-color --merged | grep -v "master" | xargs git branch -D
+        brclean = !git branch --no-color --merged | grep -v $(git branch-main)| xargs git branch -D
         brpurge = !git branch --no-color | grep -v $(git branch-name) | xargs git branch -D
+        branch-main = "!git symbolic-ref refs/remotes/origin/HEAD | cut -d'/' -f4"
         branch-name = rev-parse --abbrev-ref HEAD
-        branch-diff = diff master...HEAD
-        branch-files = "!git diff master...HEAD --name-status | sed '/^D/d ; s/^.\\s\\+//'"
+        branch-diff = !git diff $(git branch-main)...HEAD
+        branch-files = "!git diff $(git branch-main)...HEAD --name-status | sed '/^D/d ; s/^.\\s\\+//'"
 
         # Commit
         c = commit
@@ -43,13 +44,13 @@
 
         # Pull
         up = pull
-        plom = pull origin master
-        plum = pull upstream master
-        preb = !git fetch upstream && git rebase upstream/master
+        plom = pull origin $(git branch-main)
+        plum = pull upstream $(git branch-main)
+        preb = !git fetch upstream && git rebase upstream/$(git branch-main)
 
         # Push
         p = push
-        pom = push origin master
+        pom = push origin $(git branch-main)
         poh = push origin head
 
         # Stash
@@ -79,9 +80,9 @@
         new = !git pull origin develop && git flow feature start
         done = !git pull origin develop && git flow feature finish "$(git symbolic-ref --short HEAD | sed -n 's/^feature\\///p')"
         go = !git checkout $1 && pull
-        master = !git checkout master && pull
+        main = !git checkout $(git branch-main) && pull
         develop = !git checkout develop && pull
-        mmm = !git fetch origin master && git rebase origin/master
+        mmm = !git fetch origin $(git branch-main) && git rebase origin/$(git branch-main)
         ddd = !git fetch origin develop && git rebase origin/develop
 
         # Misc
@@ -242,9 +243,8 @@
         followTags = true
         default = current
 
-# Use separate file for username / github token / etc
-[include]
-        path = ~/.gitconfig.local
+[pull]
+        rebase = false
 
 [filter "lfs"]
         clean = git lfs clean %f
@@ -253,9 +253,7 @@
 
 [fetch]
         prune = true
-[magithub]
-        online = false
-[magithub "status"]
-        includeStatusHeader = false
-        includePullRequestsSection = false
-        includeIssuesSection = false
+
+# Use separate file for username / github token / etc
+[include]
+        path = ~/.gitconfig.local
