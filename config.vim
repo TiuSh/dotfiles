@@ -573,6 +573,9 @@ autocmd BufNewFile,BufRead Vagrantfile setlocal filetype=ruby
 " Axlsx-Rails view files
 autocmd BufNewFile,BufRead *.axlsx setlocal filetype=ruby
 
+" Rails Jbuilder files
+autocmd BufNewFile,BufRead *.jbuilder setlocal filetype=ruby
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => The Silver Searcher

@@ -30,6 +30,3 @@ export BLOCKSIZE=1k
 
 # Use rippgrep with FZF
 export FZF_DEFAULT_COMMAND='rg --files --hidden --smartcase --glob "!.git/*"'
-
-# Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"

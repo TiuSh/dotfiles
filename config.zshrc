@@ -116,8 +116,8 @@ if [ -f ~/.zshrc.local ]; then
   source ~/.zshrc.local
 fi
 
-# Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+# Add rbenv to the PATH
+export PATH="$HOME/.rbenv/bin:$PATH"
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+# Load rbenv
+eval "$(rbenv init -)"
