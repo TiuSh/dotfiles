@@ -14,69 +14,43 @@ Plug 'tpope/vim-vinegar'
 Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-" Plug 'vim-ctrlspace/vim-ctrlspace'
-Plug 'ctrlpvim/ctrlp.vim'
-" Plug 'lokikl/vim-ctrlp-ag' TODO: Test
-" Plug 'fisadev/vim-ctrlp-cmdpalette' TODO: Test
-" Plug 'DavidEGx/ctrlp-smarttabs' TODO: Test
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
-Plug 'junegunn/fzf.vim'
-" Plug 'haya14busa/vim-asterisk' TODO: Test
+Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
+" Plug 'linjiX/LeaderF-git'
+Plug 'TiuSh/LeaderF-git'
 Plug 'bkad/CamelCaseMotion'
 Plug 'tpope/vim-repeat'
-" Plug 'arecarn/crunch.vim'
+Plug 'tpope/vim-dispatch'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'Shougo/denite.nvim'
 Plug 'easymotion/vim-easymotion'
+" TODO: Replace with svermeulen/vim-cutlass & svermeulen/vim-subversive
 Plug 'svermeulen/vim-easyclip'
-" Plug 'vimlab/split-term.vim'
 Plug 'neovim/python-client'
 Plug 'terryma/vim-multiple-cursors'
-" Plug 'editorconfig/editorconfig-vim' TODO: Test
-" Plug 'Shougo/context_filetype.vim' TODO: Test
-" Plug 'Konfekt/FastFold' TODO: Test
-" Plug 'Yggdroot/indentLine' TODO: Test
-" Plug 'ryanoasis/vim-devicons'
-" Plug 'itchyny/calendar.vim' TODO: Test
-" Plug 'ZSaberLv0/ZFVimIndentMove' TODO: Test
-" Plug 'mhinz/vim-startify'
-" Plug 'airblade/vim-rooter'
+" Plug 'itchyny/calendar.vim'
 Plug 'tpope/vim-unimpaired'
-" Plug 'dhruvasagar/vim-zoom'
 " Plug 'simeji/winresizer'
 Plug 'gcmt/taboo.vim'
 Plug 'Valloric/ListToggle'
 Plug 'zirrostig/vim-schlepp'
-Plug 'wincent/ferret'
-Plug 'ronakg/quickr-preview.vim'
+" Plug 'wincent/ferret'
 
 " Themes
 Plug 'frankier/neovim-colors-solarized-truecolor-only'
-" Plug 'lifepillar/vim-solarized8'
-" Plug 'rakr/vim-one'
 
 " TMUX
 Plug 'tmux-plugins/vim-tmux'
-Plug 'tmux-plugins/vim-tmux-focus-events'
 
 " VCS (Git/SVN/...)
 Plug 'tpope/vim-fugitive'
-" Plug 'lambdalisue/gina.vim' TODO: Test
 Plug 'jreybert/vimagit'
 Plug 'airblade/vim-gitgutter'
-" Plug 'Xuyuanp/nerdtree-git-plugin' TODO: Test
-Plug 'junegunn/gv.vim'
 
 " All languages
 " Plug 'sheerun/vim-polyglot' TODO: Test
-" Plug 'neomake/neomake'
 Plug 'scrooloose/nerdcommenter'
 Plug 'jiangmiao/auto-pairs'
-" Plug 'itmammoth/doorboy.vim' TODO: Test
 Plug 'junegunn/vim-easy-align'
-" Plug 'roxma/nvim-completion-manager'
-" Plug 'Shougo/neoinclude.vim' TODO: Test
-" Plug 'prabirshrestha/asyncomplete.vim' TODO: Test
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Coc Plugins are installed via `CocInstall`
 " Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
@@ -89,97 +63,63 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
 Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-surround'
-Plug 'terryma/vim-expand-region'
 Plug 'vim-scripts/argtextobj.vim'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-indent'
 Plug 'glts/vim-textobj-comment'
-" Plug 'gcmt/wildfire.vim' TODO: Test
 Plug 'TiuSh/vim-toggline'
-" Plug 'AndrewRadev/switch.vim' TODO: Test
-
-" Debuggers
-Plug 'joonty/vdebug'
+Plug 'vim-test/vim-test'
 
 " Markdown
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
-" Plug 'shime/vim-livedown', { 'for': 'markdown', 'do': 'npm install -g livedown' }
 
 " HTML
 Plug 'mattn/emmet-vim'
-
-" Twig
-" Plug 'lumiliet/vim-twig', { 'for': 'twig' }
 
 " CSS
 Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 Plug 'cakebaker/scss-syntax.vim', { 'for': 'css' }
 
 " Javascript
-" Plug 'jaawerth/neomake-local-eslint-first'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'elzr/vim-json'
 Plug 'mxw/vim-jsx', { 'for': 'javascript' }
 
-" CoffeeScript
-" Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
-
 " Typescript
-" Plug 'HerringtonDarkholme/yats.vim', { 'for': 'typescript' }
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'ianks/vim-tsx', { 'for': 'typescript' }
 
-" PHP
-" Plug 'phpvim/phpcd.vim', { 'for': 'php' , 'do': 'composer update' }
-
-" Meteor
-" Plug 'cmather/vim-meteor-snippets'
+" Svelte
+Plug 'evanleck/vim-svelte', { 'branch': 'main' }
 
 " GraphQL
 Plug 'jparise/vim-graphql'
-
-" Haskell
-" Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
-" Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
-" Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
 
 " Python
 Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
 
 " Ruby / Rails
 Plug 'tek/vim-textobj-ruby'
-Plug 'osyo-manga/vim-monster', { 'do': 'gem install rcodetools', 'for': 'ruby' }
-Plug 'iurifq/ctrlp-rails.vim', { 'on': [
-      \ 'CtrlPModels',
-      \ 'CtrlPControllers',
-      \ 'CtrlPViews',
-      \ 'CtrlPLibs',
-      \ 'CtrlPSpecs',
-      \ 'CtrlPMigrations'
-      \ ] }
-Plug 'tpope/vim-rails', { 'on': [
-      \ 'Rake',
-      \ 'Rails',
-      \ 'A',
-      \ 'R',
-      \ 'Emodel',
-      \ 'Eview',
-      \ 'Econtroller',
-      \ 'Smodel',
-      \ 'Sview',
-      \ 'Scontroller',
-      \ 'Vmodel',
-      \ 'Vview',
-      \ 'Vcontroller',
-      \ 'Tmodel',
-      \ 'Tview',
-      \ 'Tcontroller',
-      \ 'Rexctract'
-      \ ] }
-
-" Svelte
-Plug 'evanleck/vim-svelte', { 'branch': 'main' }
+" Plug 'tpope/vim-rails', { 'on': [
+      " \ 'Rake',
+      " \ 'Rails',
+      " \ 'A',
+      " \ 'R',
+      " \ 'Emodel',
+      " \ 'Eview',
+      " \ 'Econtroller',
+      " \ 'Smodel',
+      " \ 'Sview',
+      " \ 'Scontroller',
+      " \ 'Vmodel',
+      " \ 'Vview',
+      " \ 'Vcontroller',
+      " \ 'Tmodel',
+      " \ 'Tview',
+      " \ 'Tcontroller',
+      " \ 'Rexctract'
+      " \ ] }
 
 call plug#end()
 
@@ -205,6 +145,9 @@ nmap <silent> <leader>w :w!<cr>
 
 " Open .vimrc file
 nmap <silent> <leader>v :tabedit $MYVIMRC<cr>
+
+" Reload .vimrc file
+nmap <silent> <Leader>vr :source $MYVIMRC<cr>
 
 " Reload file in current buffer
 nmap <silent> <leader>e :e!<cr>
@@ -600,13 +543,6 @@ autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => vimgrep searching
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" When you press <leader>r you can search and replace the selected text
-vnoremap <silent> <leader>r :call VisualSelection('replace')<cr>
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Misc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Remove the Windows ^M - when the encodings gets messed up
@@ -619,12 +555,6 @@ map <leader>pp :setlocal paste!<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! CmdLine(str)
-    exe "menu Foo.Bar :" . a:str
-    emenu Foo.Bar
-    unmenu Foo
-endfunction
-
 function! VisualSelection(direction) range
     let l:saved_reg = @"
     execute "normal! vgvy"
@@ -634,10 +564,6 @@ function! VisualSelection(direction) range
 
     if a:direction == 'b'
         execute "normal ?" . l:pattern . "^M"
-    elseif a:direction == 'gv'
-        call CmdLine("vimgrep " . '/'. l:pattern . '/' . ' **/*.')
-    elseif a:direction == 'replace'
-        call CmdLine("%s" . '/'. l:pattern . '/' . l:pattern)
     elseif a:direction == 'f'
         execute "normal /" . l:pattern . "^M"
     endif
@@ -652,10 +578,6 @@ function! HasPaste()
         return 'PASTE MODE  '
     en
     return ''
-endfunction
-
-function! StrTrim(txt)
-  return substitute(a:txt, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
 endfunction
 
 
@@ -740,113 +662,159 @@ let g:airline_exclude_preview = 1
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => CtrlP
+" => LeaderF
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:ctrlp_open_new_file = 'r'
-let g:ctrlp_show_hidden = 1
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-let g:ctrlp_buftag_types = {
-  \ 'yaml': '--options=$HOME/.ctags -f - --sort=no --excmd=pattern --fields=nKs --extras= ',
-  \ 'css': '--options=$HOME/.ctags -f - --sort=no --excmd=pattern --fields=nKs --extras= ',
-  \ 'typescript': '--options=$HOME/.ctags -f - --sort=no --excmd=pattern --fields=nKs --extras= ',
-  \ 'coffee': '--options=$HOME/.ctags -f - --sort=no --excmd=pattern --fields=nKs --extras= ',
-  \ 'javascript': {
-  \   'bin': 'ctags',
-  \   'args': '--options=$HOME/.ctags -f - --sort=no --excmd=pattern --fields=nKs --extras= ',
-  \ },
-\ }
-let g:ctrlp_prompt_mappings = {
-  \ 'PrtSelectMove("j")':   ['<c-n>', '<down>'],
-  \ 'PrtSelectMove("k")':   ['<c-p>', '<up>'],
-  \ 'PrtHistory(-1)':       ['<c-k>'],
-  \ 'PrtHistory(1)':        ['<c-j>'],
-\ }
+let g:Lf_ShortcutF = "<C-P>"
 
-if executable('rg')
-  " Use ripgrep over grep
-  set grepprg=rg\ --color=never
+" Don't show the help in normal mode
+let g:Lf_HideHelp = 1
+let g:Lf_UseCache = 0
+let g:Lf_UseVersionControlTool = 0
+let g:Lf_IgnoreCurrentBufferName = 1
 
-  " Use ripgrep in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+" Popup mode
+let g:Lf_WindowPosition = 'popup'
+let g:Lf_PreviewInPopup = 1
+let g:Lf_StlSeparator = { 'left': "\ue0b0", 'right': "\ue0b2", 'font': "DejaVu Sans Mono for Powerline" }
 
-  " ripgrep is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-endif
+" Icons
+let g:Lf_ShowDevIcons = 0
+let g:Lf_DevIconsFont = "FiraCode Nerd Font Mono"
+" set ambiwidth=double
 
-" if executable('ag')
-  " " Use ag over grep
-  " set grepprg=ag\ --nogroup\ --nocolor
+let g:Lf_PopupPalette = {
+    \  'dark': {
+    \      'Lf_hl_popup_inputText': {
+    \                'gui': 'NONE',
+    \                'font': 'NONE',
+    \                'guifg': 'NONE',
+    \                'guibg': '#073642',
+    \                'cterm': 'NONE',
+    \                'ctermfg': 'NONE',
+    \                'ctermbg': '235'
+    \              },
+    \      'Lf_hl_popup_window': {
+    \                'gui': 'NONE',
+    \                'font': 'NONE',
+    \                'guifg': 'NONE',
+    \                'guibg': '#002b36',
+    \                'cterm': 'NONE',
+    \                'ctermfg': 'NONE',
+    \                'ctermbg': '234'
+    \              },
+    \      'Lf_hl_popup_lineInfo': {
+    \                'gui': 'NONE',
+    \                'font': 'NONE',
+    \                'guifg': '#eee8d5',
+    \                'guibg': '#839496',
+    \                'cterm': 'NONE',
+    \                'ctermfg': '254',
+    \                'ctermbg': '244'
+    \              },
+    \      'Lf_hl_cursorline': {
+    \                'gui': 'NONE',
+    \                'font': 'NONE',
+    \                'guifg': '#eee8d5',
+    \                'guibg': 'NONE',
+    \                'cterm': 'NONE',
+    \                'ctermfg': '254',
+    \                'ctermbg': 'NONE'
+    \              },
+    \      'Lf_hl_match': {
+    \                'gui': 'bold',
+    \                'font': 'NONE',
+    \                'guifg': '#b58900',
+    \                'guibg': 'NONE',
+    \                'cterm': 'bold',
+    \                'ctermfg': '136',
+    \                'ctermbg': 'NONE'
+    \              },
+    \      'Lf_hl_match0': {
+    \                'gui': 'bold',
+    \                'font': 'NONE',
+    \                'guifg': '#268bd2',
+    \                'guibg': 'NONE',
+    \                'cterm': 'bold',
+    \                'ctermfg': '33',
+    \                'ctermbg': 'NONE'
+    \              },
+    \      'Lf_hl_match1': {
+    \                'gui': 'bold',
+    \                'font': 'NONE',
+    \                'guifg': '#cb4b16',
+    \                'guibg': 'NONE',
+    \                'cterm': 'bold',
+    \                'ctermfg': '166',
+    \                'ctermbg': 'NONE'
+    \              },
+    \      'Lf_hl_match2': {
+    \                'gui': 'bold',
+    \                'font': 'NONE',
+    \                'guifg': '#d33682',
+    \                'guibg': 'NONE',
+    \                'cterm': 'bold',
+    \                'ctermfg': '125',
+    \                'ctermbg': 'NONE'
+    \              },
+    \      'Lf_hl_match3': {
+    \                'gui': 'bold',
+    \                'font': 'NONE',
+    \                'guifg': '#859900',
+    \                'guibg': 'NONE',
+    \                'cterm': 'bold',
+    \                'ctermfg': '64',
+    \                'ctermbg': 'NONE'
+    \              },
+    \      'Lf_hl_match4': {
+    \                'gui': 'bold',
+    \                'font': 'NONE',
+    \                'guifg': '#2aa198',
+    \                'guibg': 'NONE',
+    \                'cterm': 'bold',
+    \                'ctermfg': '37',
+    \                'ctermbg': 'NONE'
+    \              },
+    \      'Lf_hl_rgHighlight': {
+    \                'gui': 'NONE',
+    \                'font': 'NONE',
+    \                'guifg': '#002b36',
+    \                'guibg': '#b58900',
+    \                'cterm': 'NONE',
+    \                'ctermfg': '234',
+    \                'ctermbg': '136'
+    \              },
+    \      },
+    \  }
 
-  " " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  " let g:ctrlp_user_command = 'ag %s -l --nocolor --nogroup --hidden --ignore ".git/" -g ""'
+" FIXME
+" let g:Lf_CommandMap = {
+    " \      '<C-V>': ['<C-P>'],
+    " \      '<C-S>': ['<C-M>'],
+    " \      '<C-X>': ['<C-S>'],
+    " \      '<C-]>': ['<C-V>'],
+    " \  }
 
-  " " ag is fast enough that CtrlP doesn't need to cache
-  " let g:ctrlp_use_caching = 0
-" endif
+noremap <C-B> :<C-U>Leaderf buffer<CR>
+noremap <C-T> :<C-U>Leaderf bufTag<CR>
+noremap <SPACE> :<C-U>Leaderf line<CR>
 
-map <C-b> :CtrlPBuffer<cr>
-map <C-t> :CtrlPBufTag<cr>
+" Search with Rg
+noremap <C-F> :<C-U>Leaderf! rg -e<SPACE>
+xnoremap <C-F> :<C-U><C-R>=printf("Leaderf! rg -F -e %s ", leaderf#Rg#visual())<CR><CR>
+" Open last search
+noremap <C-F><C-F> :<C-U>Leaderf! rg --recall<CR>
 
+" Git specific
+noremap <C-G>gb :<C-U>Leaderf branch -a<CR>
+noremap <C-G>gc :<C-U>Leaderf commit<CR>
+noremap <C-G>gf :<C-U>Leaderf bcommit<CR>
+noremap <C-G>gs :<C-U>Leaderf gstatus<CR>
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => FZF
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" nnoremap <silent> <C-f> :BLines<cr>
-nnoremap <Space> :BLines<cr>
-" nnoremap <C-f> :Ag<Space>
-" nmap  <C-m> <plug>(fzf-maps-n)
-
-" FzfCheckout command
-function! s:fzf_checkout_sink(line)
-  let remote = matchstr(a:line, '^\s*remotes\/')
-
-  if !empty(remote)
-    let branch = matchstr(a:line, '[^\/]*$')
-
-    execute '!git checkout -b ' . branch . ' ' . a:line
-  else
-    execute '!git checkout' . a:line
-  endif
-endfunction
-
-command! -bang -nargs=* FzfCheckout
-      \ call fzf#run(fzf#wrap('FzfCheckout', {
-      \     'source': 'git branch -a',
-      \     'sink': function('s:fzf_checkout_sink'),
-      \     'options': ['--ansi', '--prompt', 'Select Branch> ',
-      \                 '--color', 'hl:68,hl+:110']
-      \ }), <bang>0)
-
-
-" FzfPullRebase command
-function! s:fzf_pull_rebase_sink(line)
-  let remote_branch = substitute(substitute(a:line, '\/', ' ', ''), '^\s*', '', '')
-
-  execute '!git pull --rebase ' . remote_branch
-endfunction
-
-command! -bang -nargs=* FzfPullRebase
-      \ call fzf#run(fzf#wrap('FzfPullRebase', {
-      \     'source': 'git branch -r',
-      \     'sink': function('s:fzf_pull_rebase_sink'),
-      \     'options': ['--ansi', '--prompt', 'Select Branch> ',
-      \                 '--color', 'hl:68,hl+:110']
-      \ }), <bang>0)
-
-" FzfStash command
-function! s:fzf_stash_sink(line)
-  let stash = matchstr(a:line, '^\s*stash{\d*}')
-
-  execute 'Git stash apply ' . stash
-endfunction
-
-command! -bang -nargs=* FzfStash
-      \ call fzf#run(fzf#wrap('FzfStash', {
-      \     'source': 'git stash list',
-      \     'sink': function('s:fzf_stash_sink'),
-      \     'options': ['--ansi', '--prompt', 'Select Stash> ',
-      \                 '--color', 'hl:68,hl+:110']
-      \ }), <bang>0)
+" Rails specific
+noremap <C-G>rc :<C-U>LeaderfFile app/controllers<CR>
+noremap <C-G>rv :<C-U>LeaderfFile app/views<CR>
+noremap <C-G>rm :<C-U>LeaderfFile app/models<CR>
+noremap <C-G>rs :<C-U>LeaderfFile spec<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -920,7 +888,7 @@ nnoremap <leader>tr :TabooRename<Space>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => ListToggle
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Toggle location list & quick fix with Ctrl+L/Q
+" Toggle location list & quick fix with G+C/L
 let g:lt_location_list_toggle_map = 'gl'
 let g:lt_quickfix_list_toggle_map = 'gc'
 
@@ -939,20 +907,9 @@ vmap <unique> D <Plug>SchleppDup
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Ferret
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:FerretNvim = 1
+" let g:FerretNvim = 1
 
-nnoremap <C-f> :Ack<Space>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Quickr Preview
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:quickr_preview_keymaps = 0
-let g:quickr_preview_position = 'below'
-let g:quickr_preview_on_cursor = 0
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => TMUX
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" nnoremap <C-f> :Ack<Space>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Git
@@ -964,23 +921,17 @@ nnoremap <leader>gst :exec magit#show_magit('c')<CR>
 nnoremap <leader>gcs :Commits<CR>
 nnoremap <leader>gt :Gcommit -v -q %:p<CR>
 nnoremap <leader>gd :Gdiff<CR>
-nnoremap <leader>gco :FzfCheckout<CR>
+" nnoremap <leader>gco :FzfCheckout<CR>
 nnoremap <leader>gcb :Git checkout -b<Space>
 nnoremap <leader>gp :Gpush<CR>
 nnoremap <leader>gpsf :Gpush -f<CR>
 nnoremap <leader>gl :Gpull origin $(git rev-parse --abbrev-ref HEAD)<CR>
-nnoremap <leader>gup :FzfPullRebase<CR>
+" nnoremap <leader>gup :FzfPullRebase<CR>
 nnoremap <leader>gfa :Gfetch<CR>
 nnoremap <leader>gsta :Git stash<CR>
 nnoremap <leader>gstp :Git stash pop<CR>
-nnoremap <leader>gstl :FzfStash<CR>
+" nnoremap <leader>gstl :FzfStash<CR>
 nnoremap <leader>glog :GV<CR>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => GV
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Custom mappings
-" nnoremap <leader>gl :GV<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => NERD Commenter
@@ -1022,10 +973,6 @@ endfunction
 " Coc only does snippet and additional edit on confirm.
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
-" Use `[c` and `]c` for navigate diagnostics
-nmap <silent> [c <Plug>(coc-diagnostic-prev)
-nmap <silent> ]c <Plug>(coc-diagnostic-next)
-
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
@@ -1046,13 +993,6 @@ endfunction
 " Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
-" Remap for rename current word
-nmap <leader>rn <Plug>(coc-rename)
-
-" Remap for format selected region
-vmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
-
 augroup mygroup
   autocmd!
   " Setup formatexpr specified filetype(s).
@@ -1065,10 +1005,17 @@ augroup end
 vmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
 
+" Remap for rename current word
+nmap <leader>ar <Plug>(coc-rename)
+
+" Remap for format selected region
+vmap <leader>af  <Plug>(coc-format-selected)
+nmap <leader>af  <Plug>(coc-format-selected)
+
 " Remap for do codeAction of current line
 nmap <leader>ac  <Plug>(coc-codeaction)
 " Fix autofix problem of current line
-nmap <leader>qf  <Plug>(coc-fix-current)
+nmap <leader>aq  <Plug>(coc-fix-current)
 
 " Using CocList
 " Show all diagnostics
@@ -1118,15 +1065,18 @@ inoremap <silent> <leader>; <C-\><C-O>:call toggline#End(';')<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Test.vim
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let test#strategy = "neovim"
+
+nmap <silent> <leader>r :TestNearest<CR>
+nmap <silent> <leader>R :TestFile<CR>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM Markdown
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:vim_markdown_folding_disabled = 1
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Livedown
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" nmap <C-m> :LivedownToggle<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -1147,39 +1097,9 @@ let g:javascript_plugin_flow = 1
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => deoplete-ternjs
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Use deoplete.
-" let g:tern_request_timeout = 1
-" Disable full signature type on autocomplete
-" let g:tern_show_signature_in_pum = 0
-
-" Use tern_for_vim.
-" let g:tern#command = ["tern"]
-" let g:tern#arguments = ["--persistent"]
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vim JSX
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:jsx_ext_required = 0
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Typescript
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nmap <silent> <leader>tsd :TSDef<cr>
-nmap <silent> <leader>tsc :TSDoc<cr>
-nmap <silent> <leader>tsr :TSRename<cr>
-nmap <silent> <leader>tsf :TSRefs<cr>
-nmap <silent> <leader>tst :TSType<cr>
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Mdn Query
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" autocmd FileType typescript setlocal keywordprg=:MdnQueryFirstMatch
-" autocmd FileType typescript.tsx setlocal keywordprg=:MdnQueryFirstMatch
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -1190,20 +1110,10 @@ let g:nvim_typescript#type_info_on_hold = 1
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Ruby Monster
+" => Project configuration
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let g:monster#completion#rcodetools#backend = "async_rct_complete"
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => CtrlP Rails
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nmap <silent> <C-g>c :CtrlPControllers<cr>
-nmap <silent> <C-g>v :CtrlPViews<cr>
-nmap <silent> <C-g>m :CtrlPModels<cr>
-nmap <silent> <C-g>l :CtrlPLibs<cr>
-nmap <silent> <C-g>s :CtrlPSpecs<cr>
-nmap <silent> <C-g>g :CtrlPMigrations<cr>
+" Try to load a '.vimlocal' file from project
+silent! so .vimrc
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
