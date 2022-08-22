@@ -5,8 +5,9 @@ sudo apt-get install dconf-cli
 # Install solarized color theme
 git clone https://github.com/aruhier/gnome-terminal-colors-solarized.git
 ./gnome-terminal-colors-solarized/set_dark.sh
-rm -r gnome-terminal-colors-solarized
+rm -rf gnome-terminal-colors-solarized
 
 # Install font
-# TODO: Fix this script
+# TODO: Fix this script with profile ID
+# TODO: Enable the font once updated
 # dconf write /org/gnome/terminal/legacy/profiles:/:$(dconf dump /org/gnome/terminal/legacy/profiles:/ | grep -Po "(?<=default=')[^']*")/font  "'Hack Nerd Font 10'"

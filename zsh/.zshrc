@@ -34,7 +34,7 @@ prompt_end() {
 # Reboot to windows with GRUB
 reboot_to_windows() {
   WINDOWS_TITLE=`grep -i "^menuentry 'Windows" /boot/grub/grub.cfg | head -n 1 | cut -d"'" -f2`
-  grub-reboot "$WINDOWS_TITLE"
+  sudo grub-reboot "$WINDOWS_TITLE"
   reboot
 }
 

@@ -8,6 +8,8 @@ export N_PREFIX="$HOME/.n"
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/local"
 export PATH="/usr/local/git/bin:$PATH"
 export PATH="/snap/bin:$PATH"
+export PATH="/var/lib/flatpak/exports/share:$PATH"
+export PATH="$HOME/.local/share/flatpak/exports/share:$PATH"
 export PATH="$HOME/.bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$N_PREFIX/bin:$PATH"
@@ -23,3 +25,8 @@ fi
 if [ -f ~/.profile.local ]; then
   source ~/.profile.local
 fi
+
+# Start SSH keychain
+# eval `keychain --eval --quick --agents ssh id_rsa`
+
+. "$HOME/.cargo/env"

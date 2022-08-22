@@ -6,3 +6,4 @@ export DEFAULT_USER=`whoami`
 
 # Set language environment
 export LANG=en_US.UTF-8
+. "$HOME/.cargo/env"

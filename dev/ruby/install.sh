@@ -8,3 +8,4 @@ ln -fs ~/.dotfiles/dev/ruby/.pryrc ~/.pryrc
 git clone https://github.com/rbenv/rbenv.git ~/.rbenv
 mkdir -p ~/.rbenv/plugins
 git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+git clone https://github.com/rbenv/rbenv-each.git ~/.rbenv/plugins/rbenv-each

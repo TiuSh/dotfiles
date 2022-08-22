@@ -15,6 +15,8 @@ rofi/install.sh
 polybar/install.sh
 dunst/install.sh
 terminal/install.sh
+alacritty/install.sh
+tmux/install.sh
 obs/install.sh
 apps/install.sh
 .files/install.sh

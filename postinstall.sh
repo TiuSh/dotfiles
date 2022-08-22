@@ -3,7 +3,7 @@
 # Post install scripts
 
 # n
-n latest
+sudo n latest
 
 # Neovim
 
