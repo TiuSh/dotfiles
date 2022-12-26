@@ -33,7 +33,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'gcmt/taboo.vim'
 Plug 'Valloric/ListToggle'
 Plug 'zirrostig/vim-schlepp'
-" Plug 'wincent/ferret'
+Plug 'wincent/ferret'
 
 " Themes
 Plug 'frankier/neovim-colors-solarized-truecolor-only'
@@ -70,6 +70,7 @@ Plug 'kana/vim-textobj-indent'
 Plug 'glts/vim-textobj-comment'
 Plug 'TiuSh/vim-toggline'
 Plug 'vim-test/vim-test'
+Plug 'hashivim/vim-terraform'
 
 " Markdown
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
@@ -907,7 +908,8 @@ vmap <unique> D <Plug>SchleppDup
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Ferret
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let g:FerretNvim = 1
+let g:FerretNvim = 1
+let g:FerretMap = 0
 
 " nnoremap <C-f> :Ack<Space>
 
