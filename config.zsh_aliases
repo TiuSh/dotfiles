@@ -26,6 +26,7 @@ alias bs="UID=$(id -u) GID=$(id -g) bin/setup"
 alias bw="bin/webpack-dev-server"
 
 alias drr="UID=$(id -u) GID=$(id -g) bin/docker/runner"
+alias dra="bin/docker/rails"
 alias drp="bin/docker/rspec"
 alias drs="bin/docker/server"
 alias dbw="bin/docker/webpack-dev-server"
