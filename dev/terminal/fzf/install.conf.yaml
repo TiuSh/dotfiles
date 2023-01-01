@@ -1,0 +1,11 @@
+- defaults:
+  link:
+    create: true
+    force:  true
+    relink: true
+
+- brew:
+  - fzf
+
+- shell:
+  - ['$(brew --prefix)/opt/fzf/install --all', Installing fzf]

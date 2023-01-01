@@ -1,0 +1,8 @@
+- defaults:
+  link:
+    create: true
+    force:  true
+    relink: true
+
+- link:
+  ~/.bin/ssh-key: ssh-key

@@ -1,0 +1,17 @@
+- defaults:
+  link:
+    create: true
+    force:  true
+    relink: true
+
+- link:
+  ~/.zsh_aliases: .zsh_aliases
+  ~/.zshenv: .zshenv
+  ~/.zshrc: .zshrc
+
+- brew:
+  - zsh
+  - zsh-syntax-highlighting
+
+- shell:
+  - ['sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"', Installing OhMyZsh]

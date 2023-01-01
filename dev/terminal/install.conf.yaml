@@ -1,0 +1,32 @@
+- defaults:
+  link:
+    create: true
+    force:  true
+    relink: true
+
+- clean:
+  - ~/.ssh
+
+- brew:
+  - cmake
+  - coreutils
+  - bmon
+  - curl
+  - imagemagick
+  - jq
+  - htop
+  - iftop
+  - ripgrep
+  - the_silver_searcher
+  - tldr
+  - wget
+
+- link:
+  ~/.bash_fzf: .bash_fzf
+  ~/.bash_profile: .bash_profile
+  ~/.bashrc: .bashrc
+  ~/.ssh/config: ssh-config
+
+- shell:
+  - cp ~/.dotfiles/terminal/.profile.local ~/
+  - ['tic themes/xterm-256color-italic.terminfo', Enabling true color & italic in terminal]

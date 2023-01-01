@@ -1,0 +1,12 @@
+- defaults:
+  link:
+    create: true
+    force:  true
+    relink: true
+
+- tap:
+  - caskroom/fonts
+
+- cask:
+  - font-hack-nerd-font
+  - font-fira-code-nerd-font

@@ -1,0 +1,28 @@
+- defaults:
+  link:
+    create: true
+    force:  true
+    relink: true
+
+- link:
+  ~/.pryrc: .pryrc
+  ~/.gemrc: .gemrc
+
+- brew:
+  - awscli
+  - gh
+  - hub
+  - n
+  - node
+  - python
+  - python3
+  - rbenv
+  - ruby-build
+
+- bash:
+  # Python
+  - curl -O https://bootstrap.pypa.io/get-pip.py
+  - python3 get-pip.py --user
+  - rm get-pip.py
+  # Ruby
+  - git clone https://github.com/rbenv/rbenv-each.git "$(rbenv root)"/plugins/rbenv-each

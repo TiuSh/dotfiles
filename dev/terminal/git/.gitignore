@@ -3,9 +3,6 @@ private
 # Git credential file
 .gitconfig.local
 
-# Vim project specific configuration file
-.vimrc
-
 # Folder view configuration files
 .DS_Store
 Desktop.ini

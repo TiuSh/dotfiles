@@ -6,12 +6,11 @@
 
         # Branch
         br = branch
-        brclean = !git branch --no-color --merged | grep -v $(git branch-main)| xargs git branch -D
+        brclean = !git branch --no-color --merged | grep -v "master" | xargs git branch -D
         brpurge = !git branch --no-color | grep -v $(git branch-name) | xargs git branch -D
-        branch-main = "!git symbolic-ref refs/remotes/origin/HEAD | cut -d'/' -f4"
         branch-name = rev-parse --abbrev-ref HEAD
-        branch-diff = !git diff $(git branch-main)...HEAD
-        branch-files = "!git diff $(git branch-main)...HEAD --name-status | sed '/^D/d ; s/^.\\s\\+//'"
+        branch-diff = diff master...HEAD
+        branch-files = "!git diff master...HEAD --name-status | sed '/^D/d ; s/^.\\s\\+//'"
 
         # Commit
         c = commit
@@ -44,13 +43,13 @@
 
         # Pull
         up = pull
-        plom = pull origin $(git branch-main)
-        plum = pull upstream $(git branch-main)
-        preb = !git fetch upstream && git rebase upstream/$(git branch-main)
+        plom = pull origin master
+        plum = pull upstream master
+        preb = !git fetch upstream && git rebase upstream/master
 
         # Push
         p = push
-        pom = push origin $(git branch-main)
+        pom = push origin master
         poh = push origin head
 
         # Stash
@@ -69,20 +68,22 @@
         unstage = reset HEAD --                      # Mixed reset (affects HEAD and Index)
         undo = reset --soft HEAD~1                   # Undo last commit (affects HEAD only)
         reset = reset --hard HEAD~1                  # Remove last commit (from HEAD, Index and Working Dir)
+        retry = commit --amend --no-edit             # Re-create last commit
 
         # Remote
         r = remote -v
 
         # Submodules
         subpl = submodule update --init --recursive
+        subrst = !git submodule deinit -f . && git submodule update --init
 
         # Git flow
         new = !git pull origin develop && git flow feature start
         done = !git pull origin develop && git flow feature finish "$(git symbolic-ref --short HEAD | sed -n 's/^feature\\///p')"
         go = !git checkout $1 && pull
-        main = !git checkout $(git branch-main) && pull
+        master = !git checkout master && pull
         develop = !git checkout develop && pull
-        mmm = !git fetch origin $(git branch-main) && git rebase origin/$(git branch-main)
+        mmm = !git fetch origin master && git rebase origin/master
         ddd = !git fetch origin develop && git rebase origin/develop
 
         # Misc
@@ -243,8 +244,9 @@
         followTags = true
         default = current
 
-[pull]
-        rebase = false
+# Use separate file for username / github token / etc
+[include]
+        path = ~/.gitconfig.local
 
 [filter "lfs"]
         clean = git lfs clean %f
@@ -253,7 +255,14 @@
 
 [fetch]
         prune = true
+[magithub]
+        online = false
+[magithub "status"]
+        includeStatusHeader = false
+        includePullRequestsSection = false
+        includeIssuesSection = false
 
-# Use separate file for username / github token / etc
-[include]
-        path = ~/.gitconfig.local
+# Github credentials
+[credential "https://github.com"]
+       helper =
+       helper = !/usr/bin/gh auth git-credential

@@ -1,9 +1,10 @@
 [submodule "dotbot"]
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
+	ignore = dirty
 [submodule "dotbot-brew"]
 	path = dotbot-brew
 	url = https://github.com/d12frosted/dotbot-brew.git
-[submodule "tmux-plugin-manager"]
-	path = tmux-plugin-manager
+[submodule "dev/terminal/tmux/tpm"]
+	path = dev/terminal/tmux/tpm
 	url = https://github.com/tmux-plugins/tpm

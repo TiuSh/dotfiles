@@ -70,7 +70,12 @@ Plug 'kana/vim-textobj-indent'
 Plug 'glts/vim-textobj-comment'
 Plug 'TiuSh/vim-toggline'
 Plug 'vim-test/vim-test'
-Plug 'hashivim/vim-terraform'
+
+" Debuggers
+Plug 'joonty/vdebug'
+
+" Terminals
+Plug 'habamax/vim-sendtoterm'
 
 " Markdown
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
@@ -122,6 +127,9 @@ Plug 'tek/vim-textobj-ruby'
       " \ 'Rexctract'
       " \ ] }
 
+" Terraform
+Plug 'hashivim/vim-terraform'
+
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -154,7 +162,7 @@ nmap <silent> <Leader>vr :source $MYVIMRC<cr>
 nmap <silent> <leader>e :e!<cr>
 
 " Use the system clipboard by default
-set clipboard=unnamed
+set clipboard+=unnamedplus
 
 " Allow per-project configuration file (.vimrc / .nvimrc)
 set exrc
@@ -962,9 +970,10 @@ nmap ga <Plug>(EasyAlign)
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#pum#visible() ? coc#pum#next(1):
+      \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -1073,6 +1082,12 @@ let test#strategy = "neovim"
 
 nmap <silent> <leader>r :TestNearest<CR>
 nmap <silent> <leader>R :TestFile<CR>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => SendToTerm
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap <leader>i <Plug>(SendToTerm)
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

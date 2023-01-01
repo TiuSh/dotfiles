@@ -2,21 +2,32 @@
 
 set -e
 
+BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 CONFIG="install.conf.yaml"
 DOTBOT_DIR="dotbot"
-
 DOTBOT_BIN="bin/dotbot"
-BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
+git submodule update --init --recursive "${DOTBOT_DIR}"
 
 cd "${BASEDIR}"
 
-# Init dotbot
-git submodule update --init --recursive "${DOTBOT_DIR}"
+dotbot () {
+  echo "Installing $1"
+  "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}/$1" -c "$1/${CONFIG}" --plugin-dir dotbot-brew
+}
 
-# Init plugins
-for plugin in ./dotbot-*
-do
-  git submodule update --init --recursive "${plugin}"
-done
-
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" --plugin-dir dotbot-brew -c "${CONFIG}" "${@}"
+dotbot "apps"
+dotbot "dev"
+dotbot "dev/docker"
+dotbot "dev/neovim"
+dotbot "dev/terminal"
+dotbot "dev/terminal/bin"
+dotbot "dev/terminal/fzf"
+dotbot "dev/terminal/git"
+dotbot "dev/terminal/iterm2"
+dotbot "dev/terminal/tmux"
+dotbot "dev/terminal/zsh"
+dotbot "dev/vscode"
+dotbot "fonts"
+dotbot "macos"
