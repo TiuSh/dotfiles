@@ -1,18 +1,18 @@
 - defaults:
-  link:
-    create: true
-    force:  true
-    relink: true
+    link:
+      create: true
+      force:  true
+      relink: true
 
 - clean:
   - '~/Library/Application Support/Code/User'
 
 - link:
-  ~/.config/vscode/init.vim: init.vim
-  '~/Library/Application Support/Code/User/settings.json': settings.json
-  '~/Library/Application Support/Code/User/keybindings.json': keybindings.json
-  '~/Library/Application Support/Code/User/extensions.json': extensions.json
-  '~/Library/Application Support/Code/User/snippets': snippets
+    ~/.config/vscode/init.vim: init.vim
+    '~/Library/Application Support/Code/User/settings.json': settings.json
+    '~/Library/Application Support/Code/User/keybindings.json': keybindings.json
+    '~/Library/Application Support/Code/User/extensions.json': extensions.json
+    '~/Library/Application Support/Code/User/snippets': snippets
 
 - cask:
   - visual-studio-code

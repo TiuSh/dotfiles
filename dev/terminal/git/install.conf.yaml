@@ -1,16 +1,16 @@
 - defaults:
-  link:
-    create: true
-    force:  true
-    relink: true
+    link:
+      create: true
+      force:  true
+      relink: true
 
 - link:
-  ~/.gitconfig: .gitconfig
-  ~/.gitignore: .gitignore
+    ~/.gitconfig: .gitconfig
+    ~/.gitignore: .gitignore
 
 - brew:
   - git
   - git-extras
 
 - shell:
-  - cp .gitconfig.local ~/
+  - cp ~/.dotfiles/dev/terminal/git/.gitconfig.local ~/

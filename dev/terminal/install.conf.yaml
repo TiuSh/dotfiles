@@ -1,11 +1,18 @@
 - defaults:
-  link:
-    create: true
-    force:  true
-    relink: true
+    link:
+      create: true
+      force:  true
+      relink: true
 
 - clean:
   - ~/.ssh
+
+- link:
+    ~/.bash_fzf: .bash_fzf
+    ~/.bash_profile: .bash_profile
+    ~/.bashrc: .bashrc
+    ~/.profile: .profile
+    ~/.ssh/config: ssh-config
 
 - brew:
   - cmake
@@ -21,12 +28,5 @@
   - tldr
   - wget
 
-- link:
-  ~/.bash_fzf: .bash_fzf
-  ~/.bash_profile: .bash_profile
-  ~/.bashrc: .bashrc
-  ~/.ssh/config: ssh-config
-
 - shell:
-  - cp ~/.dotfiles/terminal/.profile.local ~/
-  - ['tic themes/xterm-256color-italic.terminfo', Enabling true color & italic in terminal]
+  - cp ~/.dotfiles/dev/terminal/.profile.local ~/

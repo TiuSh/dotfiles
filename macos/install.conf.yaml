@@ -1,11 +1,11 @@
 - defaults:
-  link:
-    create: true
-    force:  true
-    relink: true
+    link:
+      create: true
+      force:  true
+      relink: true
 
 - clean:
   - '/Library/Keyboard Layouts'
 
-link:
-  - '/Library/Keyboard Layouts/Dvorak Code (mac).keylayout': Dvorak Code (mac).keylayout
+- link:
+    '/Library/Keyboard Layouts/Dvorak Code (mac).keylayout': Dvorak Code (mac).keylayout

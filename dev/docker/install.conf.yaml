@@ -1,11 +1,11 @@
 - defaults:
-  link:
-    create: true
-    force:  true
-    relink: true
+    link:
+      create: true
+      force:  true
+      relink: true
 
 - link:
-  ~/.bin/docker-compose: docker-compose
+    ~/.bin/docker-compose: docker-compose
 
-- cask:
-  - docker
+# - cask:
+#   - docker

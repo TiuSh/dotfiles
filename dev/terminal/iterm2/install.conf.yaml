@@ -1,12 +1,13 @@
 - defaults:
-  link:
-    create: true
-    force:  true
-    relink: true
+    link:
+      create: true
+      force:  true
+      relink: true
 
 - cask:
   - iterm2
 
 - shell:
   - ['open ~/.dotfiles/dev/terminal/iterm2/themes/solarized/Solarized\ Dark.itermcolors', Installing iTerm2 color theme]
+  - ['tic ~/.dotfiles/dev/terminal/iterm2/themes/xterm-256color-italic.terminfo', Enabling true color & italic in terminal]
   - ['defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.dotfiles/dev/terminal/iterm2/config" && defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true', Installing iTerm2 config]

@@ -2,32 +2,35 @@
 
 set -e
 
+CURRENT_DIR="$(pwd)"
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 CONFIG="install.conf.yaml"
 DOTBOT_DIR="dotbot"
 DOTBOT_BIN="bin/dotbot"
 
-git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
-git submodule update --init --recursive "${DOTBOT_DIR}"
-
 cd "${BASEDIR}"
+
+git submodule sync --quiet --recursive
+git submodule update --init --recursive
 
 dotbot () {
   echo "Installing $1"
-  "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}/$1" -c "$1/${CONFIG}" --plugin-dir dotbot-brew
+  "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}/$1" -c "$1/${CONFIG}" --plugin-dir dotbot-brew -v
 }
 
+dotbot "."
 dotbot "apps"
 dotbot "dev"
 dotbot "dev/docker"
 dotbot "dev/neovim"
 dotbot "dev/terminal"
+dotbot "dev/terminal/iterm2"
+dotbot "dev/terminal/zsh"
 dotbot "dev/terminal/bin"
 dotbot "dev/terminal/fzf"
 dotbot "dev/terminal/git"
-dotbot "dev/terminal/iterm2"
 dotbot "dev/terminal/tmux"
-dotbot "dev/terminal/zsh"
 dotbot "dev/vscode"
 dotbot "fonts"
 dotbot "macos"
+dotbot "macos/yabai"

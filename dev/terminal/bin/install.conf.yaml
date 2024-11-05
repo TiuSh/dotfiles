@@ -1,8 +1,8 @@
 - defaults:
-  link:
-    create: true
-    force:  true
-    relink: true
+    link:
+      create: true
+      force:  true
+      relink: true
 
 - link:
-  ~/.bin/ssh-key: ssh-key
+    ~/.bin/ssh-key: ssh-key

@@ -16,6 +16,8 @@ alias gap="ga -p"
 alias ghpr="hub pull-request --base develop --assign tiush --push --draft"
 alias gcdl="gcd && gfa && gl && g brpurge"
 alias gcml="gcm && gfa && gl && g brpurge"
+alias gca="git commit --amend"
+alias gca!="git commit --amend --no-edit"
 
 # bundle
 alias be="bundle exec"
@@ -44,3 +46,5 @@ alias dcs="docker-compose stop"
 alias dsb="bin/docker/storybook"
 alias dsk="bin/docker/sidekiq"
 
+# trapd
+alias trapd="docker compose run --rm --service-ports -it app"

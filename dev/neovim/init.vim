@@ -678,8 +678,25 @@ let g:Lf_ShortcutF = "<C-P>"
 " Don't show the help in normal mode
 let g:Lf_HideHelp = 1
 let g:Lf_UseCache = 0
+let g:Lf_UseMemoryCache = 0
 let g:Lf_UseVersionControlTool = 0
 let g:Lf_IgnoreCurrentBufferName = 1
+let g:Lf_ShowHidden = 1
+let g:Lf_WildIgnore = {
+    \ 'dir': ['.svn','.git','.hg'],
+    \ 'file':
+      \ [
+          \ '*.o','*~','*.pyc','.hg','.git','.svn',
+          \ '*.aux','*.out','*.toc',
+          \ '*.jpg','*.bmp','*.gif','*.png','*.jpeg',
+          \ '*.o','*.obj','*.exe','*.dll','*.manifest',
+          \ '*.spl',
+          \ '*.sw?',
+          \ '.DS_Store',
+          \ '*.obj','*.rbc','*.class','*.gem',
+          \ '*.zip','*.tar.gz','*.tar.bz2','*.rar','*.tar.xz'
+      \ ]
+    \ }
 
 " Popup mode
 let g:Lf_WindowPosition = 'popup'
@@ -844,6 +861,12 @@ sunmap ge
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Use <leader>. as a prefix for easymotion commands
 map <Leader>. <Plug>(easymotion-prefix)
+
+" Set motion keys (Dvorak optimized)
+let g:EasyMotion_keys = 'HUTENODIPGMKSA'
+
+" Ignore case
+let g:EasyMotion_use_upper = 1
 
 " Enable default mappings
 let g:EasyMotion_do_mapping = 1

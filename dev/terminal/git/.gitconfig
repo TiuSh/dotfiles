@@ -1,96 +1,96 @@
 # A good list of alises http://haacked.com/archive/2014/07/28/github-flow-aliases/
 [alias]
-        # Staging
-        a = add
-        aa = add --all
+  # Staging
+  a = add
+  aa = add --all
 
-        # Branch
-        br = branch
-        brclean = !git branch --no-color --merged | grep -v "master" | xargs git branch -D
-        brpurge = !git branch --no-color | grep -v $(git branch-name) | xargs git branch -D
-        branch-name = rev-parse --abbrev-ref HEAD
-        branch-diff = diff master...HEAD
-        branch-files = "!git diff master...HEAD --name-status | sed '/^D/d ; s/^.\\s\\+//'"
+  # Branch
+  br = branch
+  brclean = !git branch --no-color --merged | grep -v "main" | xargs git branch -D
+  brpurge = !git branch --no-color | grep -v $(git branch-name) | xargs git branch -D
+  branch-name = rev-parse --abbrev-ref HEAD
+  branch-diff = diff main...HEAD
+  branch-files = "!git diff main...HEAD --name-status | sed '/^D/d ; s/^.\\s\\+//'"
 
-        # Commit
-        c = commit
-        ca = commit -a
-        cm = commit -m
-        cal = !git add -A && git commit              # Commit all changes
-        cam = commit -am
-        cne = commit --no-edit
-        amend = commit --amend
-        amend-all = !git add --all && git commit --amend --reuse-message=HEAD
+  # Commit
+  c = commit
+  ca = commit -a
+  cm = commit -m
+  cal = !git add -A && git commit              # Commit all changes
+  cam = commit -am
+  cne = commit --no-edit
+  amend = commit --amend
+  amend-all = !git add --all && git commit --amend --reuse-message=HEAD
 
-        # Clone
-        cl = clone
-        sclone = clone --depth=1
+  # Clone
+  cl = clone
+  sclone = clone --depth=1
 
-        # Checkout
-        co = checkout
-        cb = checkout -b
+  # Checkout
+  co = checkout
+  cb = checkout -b
 
-        # Cherry-pick
-        cp = cherry-pick
+  # Cherry-pick
+  cp = cherry-pick
 
-        # Diff
-        d = diff --color-words
-        dc = diff --cached
-        df = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+  # Diff
+  d = diff --color-words
+  dc = diff --cached
+  df = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
 
-        # Merge
-        m = merge
+  # Merge
+  m = merge
 
-        # Pull
-        up = pull
-        plom = pull origin master
-        plum = pull upstream master
-        preb = !git fetch upstream && git rebase upstream/master
+  # Pull
+  up = pull
+  plom = pull origin main
+  plum = pull upstream main
+  preb = !git fetch upstream && git rebase upstream/main
 
-        # Push
-        p = push
-        pom = push origin master
-        poh = push origin head
+  # Push
+  p = push
+  pom = push origin main
+  poh = push origin head
 
-        # Stash
-        st = stash
-        stp = stash pop
+  # Stash
+  st = stash
+  stp = stash pop
 
-        # Status/Logging
-        s = status
-        ss = status -sb
-        hist = log --graph --pretty=custom           # Show custom graph
-        l = log --pretty=custom                      # Show custom log
-        ll = log --stat --abbrev-commit
-        lc = shortlog --summary --numbered           # List contributors
+  # Status/Logging
+  s = status
+  ss = status -sb
+  hist = log --graph --pretty=custom           # Show custom graph
+  l = log --pretty=custom                      # Show custom log
+  ll = log --stat --abbrev-commit
+  lc = shortlog --summary --numbered           # List contributors
 
-        # Reset
-        unstage = reset HEAD --                      # Mixed reset (affects HEAD and Index)
-        undo = reset --soft HEAD~1                   # Undo last commit (affects HEAD only)
-        reset = reset --hard HEAD~1                  # Remove last commit (from HEAD, Index and Working Dir)
-        retry = commit --amend --no-edit             # Re-create last commit
+  # Reset
+  unstage = reset HEAD --                      # Mixed reset (affects HEAD and Index)
+  undo = reset --soft HEAD~1                   # Undo last commit (affects HEAD only)
+  reset = reset --hard HEAD~1                  # Remove last commit (from HEAD, Index and Working Dir)
+  retry = commit --amend --no-edit             # Re-create last commit
 
-        # Remote
-        r = remote -v
+  # Remote
+  r = remote -v
 
-        # Submodules
-        subpl = submodule update --init --recursive
-        subrst = !git submodule deinit -f . && git submodule update --init
+  # Submodules
+  subpl = submodule update --init --recursive
+  subrst = !git submodule deinit -f . && git submodule update --init
 
-        # Git flow
-        new = !git pull origin develop && git flow feature start
-        done = !git pull origin develop && git flow feature finish "$(git symbolic-ref --short HEAD | sed -n 's/^feature\\///p')"
-        go = !git checkout $1 && pull
-        master = !git checkout master && pull
-        develop = !git checkout develop && pull
-        mmm = !git fetch origin master && git rebase origin/master
-        ddd = !git fetch origin develop && git rebase origin/develop
+  # Git flow
+  new = !git pull origin develop && git flow feature start
+  done = !git pull origin develop && git flow feature finish "$(git symbolic-ref --short HEAD | sed -n 's/^feature\\///p')"
+  go = !git checkout $1 && pull
+  main = !git checkout main && pull
+  develop = !git checkout develop && pull
+  mmm = !git fetch origin main && git rebase origin/main
+  ddd = !git fetch origin develop && git rebase origin/develop
 
-        # Misc
-        publish = "!git push --set-upstream origin $(git branch-name)"
+  # Misc
+  publish = "!git push --set-upstream origin $(git branch-name)"
 
-        # Github
-        pr = !hub pull-request --base develop --assign tiush --push --draft
+  # Github
+  pr = !hub pull-request --base develop --assign tiush --push --draft
 
   # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

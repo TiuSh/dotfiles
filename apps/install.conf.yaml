@@ -1,14 +1,13 @@
 - defaults:
-  link:
-    create: true
-    force:  true
-    relink: true
+    link:
+      create: true
+      force:  true
+      relink: true
 
 cask:
-  - 1password
   - brave-browser
   - firefox
   - google-chrome
-  - plexamp
+  - roon
   - slack
   - tidal

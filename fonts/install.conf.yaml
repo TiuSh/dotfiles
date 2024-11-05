@@ -1,11 +1,8 @@
 - defaults:
-  link:
-    create: true
-    force:  true
-    relink: true
-
-- tap:
-  - caskroom/fonts
+    link:
+      create: true
+      force:  true
+      relink: true
 
 - cask:
   - font-hack-nerd-font

@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# Post install scripts
+
+# Neovim
+
+# Setup Python provider
+pip install neovim
+pip3 install neovim
+
+# Setup Node provider
+npm install -g neovim
+
+# Setup Ruby provider
+gem install neovim
+
+# Update plugins
+nvim +PlugInstall +UpdateRemotePlugins +qa

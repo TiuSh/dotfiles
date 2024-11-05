@@ -1,0 +1,13 @@
+- defaults:
+    link:
+      create: true
+      force:  true
+      relink: true
+
+- link:
+    ~/.config/yabai/yabairc: yabairc
+    ~/.config/skhd/skhdrc: skhdrc
+
+- brew:
+  - koekeishiya/formulae/yabai
+  - koekeishiya/formulae/skhd

@@ -1,15 +1,15 @@
 - defaults:
-  link:
-    create: true
-    force:  true
-    relink: true
+    link:
+      create: true
+      force:  true
+      relink: true
 
 - clean:
   - ~/.tmux/plugins
 
 - link:
-  ~/.tmux/plugins/tpm: tpm
-  ~/.tmux.conf: tmux.conf
+    ~/.tmux/plugins/tpm: tpm
+    ~/.tmux.conf: tmux.conf
 
 - brew:
   - tmux

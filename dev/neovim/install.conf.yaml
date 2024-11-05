@@ -1,22 +1,20 @@
 - defaults:
-  link:
-    create: true
-    force:  true
-    relink: true
+    link:
+      create: true
+      force:  true
+      relink: true
 
 - clean:
   - ~/.config/nvim
 
 - link:
-  ~/.config/nvim/coc-settings.json: coc-settings.json
-  ~/.config/nvim/UltiSnips: UltiSnips
-  ~/.config/nvim/init.vim: init.vim
+    ~/.config/nvim/coc-settings.json: coc-settings.json
+    ~/.config/nvim/UltiSnips: UltiSnips
+    ~/.config/nvim/init.vim: init.vim
 
 - brew:
   - neovim
-
-- cask:
-  - universal-ctags/universal-ctags/universal-ctags --HEAD
+  - universal-ctags
 
 - shell:
   - ['[ -f ~/.local/share/nvim/site/autoload/plug.vim ] || curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim', Installing vim-plug]

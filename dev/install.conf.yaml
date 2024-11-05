@@ -1,28 +1,31 @@
 - defaults:
-  link:
-    create: true
-    force:  true
-    relink: true
+    link:
+      create: true
+      force:  true
+      relink: true
 
 - link:
-  ~/.pryrc: .pryrc
-  ~/.gemrc: .gemrc
+    ~/.pryrc: .pryrc
+    ~/.gemrc: .gemrc
 
 - brew:
+  - coreutils
+  - curl
+  - git
   - awscli
   - gh
   - hub
-  - n
-  - node
-  - python
-  - python3
-  - rbenv
-  - ruby-build
 
-- bash:
-  # Python
-  - curl -O https://bootstrap.pypa.io/get-pip.py
-  - python3 get-pip.py --user
-  - rm get-pip.py
-  # Ruby
-  - git clone https://github.com/rbenv/rbenv-each.git "$(rbenv root)"/plugins/rbenv-each
+- shell:
+  - ['git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.1 || true', Installing asdf]
+  - ['$HOME/.asdf/bin/asdf plugin add nodejs', Adding nodejs plugin]
+  - ['$HOME/.asdf/bin/asdf plugin add python', Adding python plugin]
+  - ['$HOME/.asdf/bin/asdf plugin add ruby', Adding ruby plugin]
+  - ['$HOME/.asdf/bin/asdf install nodejs latest', Installing Node]
+  - ['$HOME/.asdf/bin/asdf global nodejs latest', Installing Node]
+  - ['$HOME/.asdf/bin/asdf install python 3.12.7', Installing Python]
+  - ['$HOME/.asdf/bin/asdf install python 2.7.18', Installing Python]
+  - ['$HOME/.asdf/bin/asdf global python 3.12.7 2.7.18', Installing Python]
+  - ['$HOME/.asdf/bin/asdf reshim python', Installing Python]
+  - ['$HOME/.asdf/bin/asdf install ruby latest', Installing Ruby]
+  - ['$HOME/.asdf/bin/asdf global ruby latest', Installing Ruby]

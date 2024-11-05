@@ -10,15 +10,13 @@
 
 `$ ~/.dotfiles/install`
 
-* Update Neovim plugins
+* Restart terminal and run post-install script
 
-`$ nvim +PlugInstall +UpdateRemotePlugins +qa`
+`$ ~/.dotfiles/post-install`
 
 ## Resources
 
-- [GitHub ❤ ~/](https://dotfiles.github.com/)
 - [Dotbot](https://github.com/anishathalye/dotbot)
-- [Nick Plekhanov's Dotfiles](https://github.com/nicksp/dotfiles)
 
 ## License
 
