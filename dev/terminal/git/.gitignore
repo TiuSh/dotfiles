@@ -19,3 +19,6 @@ Thumbs.db
 # npm
 node_modules
 npm-debug.log
+
+# asdf
+.tool-versions

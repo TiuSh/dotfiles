@@ -14,6 +14,15 @@
 
 `$ ~/.dotfiles/post-install`
 
+## TODO
+
+- ~/.asdfrc
+- 1password SSH agent
+- Local config files (personal vs work)
+    - Git
+    - AWS
+- tmux install plugins
+
 ## Resources
 
 - [Dotbot](https://github.com/anishathalye/dotbot)

@@ -5,9 +5,11 @@
       relink: true
 
 cask:
+  - 1password
   - brave-browser
   - firefox
   - google-chrome
+  - proton-pass
+  - protonvpn
   - roon
   - slack
-  - tidal
